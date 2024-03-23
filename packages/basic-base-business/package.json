@@ -1,5 +1,5 @@
 {
-  "name": "@own-basic-business/resource",
+  "name": "@own-basic-business/base-business",
   "type": "module",
   "version": "0.8.0",
   "packageManager": "pnpm@8.15.5",
@@ -9,7 +9,7 @@
   "repository": {
     "type": "git",
     "url": "https://gitee.com/chenxueli0109/own-basic-business.git",
-    "directory": "packages/basic-resource"
+    "directory": "packages/basic-base-business"
   },
   "publishConfig": {
     "access": "public",
@@ -54,11 +54,6 @@
   "devDependencies": {
     "@antfu/eslint-config": "^2.9.0",
     "@antfu/ni": "^0.21.12",
-    "@antfu/utils": "^0.7.7",
-    "@own-basic-business/base-business": "workspace:*",
-    "@own-basic-component/config": "0.8.0",
-    "@own-basic-component/request": "0.8.0",
-    "@own-basic-component/util": "0.8.0",
     "@types/node": "^20.11.30",
     "@vueuse/core": "^10.9.0",
     "bumpp": "^9.4.0",
