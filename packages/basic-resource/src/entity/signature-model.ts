@@ -1,3 +1,8 @@
+/**
+ * 三方服务
+ */
+export type ServiceType = 'aliyun' | 'qiniu' | 'tencent' | 'minio' | 'huawei'
+
 export interface SignatureModel {
   /**
    * 访问ID
@@ -23,6 +28,10 @@ export interface SignatureModel {
    * 超时时间
    */
   expire: string
+  /**
+   * 上传的三方类型
+   */
+  type: ServiceType
 }
 
 export interface SignatureForm {
