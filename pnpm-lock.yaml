@@ -39,7 +39,7 @@ devDependencies:
     specifier: ^2.0.0
     version: 2.0.0(typescript@5.4.3)
   vite:
-    specifier: ^5.2.2
+    specifier: ^5.2.4
     version: 5.2.4
   vitest:
     specifier: ^1.4.0
