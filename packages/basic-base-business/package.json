@@ -52,7 +52,7 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.10.0",
+    "@antfu/eslint-config": "^2.11.0",
     "@antfu/ni": "^0.21.12",
     "@types/node": "^20.11.30",
     "@vueuse/core": "^10.9.0",
