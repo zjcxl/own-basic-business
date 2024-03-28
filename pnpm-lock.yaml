@@ -48,72 +48,6 @@ importers:
         specifier: ^1.4.0
         version: 1.4.0(@types/node@20.11.30)
 
-  packages/basic-all:
-    devDependencies:
-      '@antfu/eslint-config':
-        specifier: ^2.11.0
-        version: 2.11.3(@vue/compiler-sfc@3.4.21)(eslint@8.57.0)(typescript@5.4.3)(vitest@1.4.0)
-      '@antfu/ni':
-        specifier: ^0.21.12
-        version: 0.21.12
-      '@antfu/utils':
-        specifier: ^0.7.7
-        version: 0.7.7
-      '@own-basic-business/base-business':
-        specifier: workspace:*
-        version: link:../basic-base-business
-      '@own-basic-business/login':
-        specifier: workspace:*
-        version: link:../basic-login
-      '@own-basic-business/resource':
-        specifier: workspace:*
-        version: link:../basic-resource
-      '@own-basic-component/config':
-        specifier: 0.8.0
-        version: 0.8.0
-      '@own-basic-component/request':
-        specifier: 0.8.0
-        version: 0.8.0
-      '@own-basic-component/util':
-        specifier: 0.8.0
-        version: 0.8.0
-      '@types/node':
-        specifier: ^20.11.30
-        version: 20.11.30
-      '@vueuse/core':
-        specifier: ^10.9.0
-        version: 10.9.0(vue@3.4.21)
-      bumpp:
-        specifier: ^9.4.0
-        version: 9.4.0
-      eslint:
-        specifier: ^8.57.0
-        version: 8.57.0
-      esno:
-        specifier: ^4.7.0
-        version: 4.7.0
-      lint-staged:
-        specifier: ^15.2.2
-        version: 15.2.2
-      pnpm:
-        specifier: ^8.15.5
-        version: 8.15.5
-      rimraf:
-        specifier: ^5.0.5
-        version: 5.0.5
-      typescript:
-        specifier: ^5.4.3
-        version: 5.4.3
-      unbuild:
-        specifier: ^2.0.0
-        version: 2.0.0(typescript@5.4.3)
-      vite:
-        specifier: ^5.2.6
-        version: 5.2.6(@types/node@20.11.30)
-      vitest:
-        specifier: ^1.4.0
-        version: 1.4.0(@types/node@20.11.30)
-
   packages/basic-base-business:
     devDependencies:
       '@antfu/eslint-config':
@@ -122,126 +56,6 @@ importers:
       '@antfu/ni':
         specifier: ^0.21.12
         version: 0.21.12
-      '@types/node':
-        specifier: ^20.11.30
-        version: 20.11.30
-      '@vueuse/core':
-        specifier: ^10.9.0
-        version: 10.9.0(vue@3.4.21)
-      bumpp:
-        specifier: ^9.4.0
-        version: 9.4.0
-      eslint:
-        specifier: ^8.57.0
-        version: 8.57.0
-      esno:
-        specifier: ^4.7.0
-        version: 4.7.0
-      lint-staged:
-        specifier: ^15.2.2
-        version: 15.2.2
-      pnpm:
-        specifier: ^8.15.5
-        version: 8.15.5
-      rimraf:
-        specifier: ^5.0.5
-        version: 5.0.5
-      typescript:
-        specifier: ^5.4.3
-        version: 5.4.3
-      unbuild:
-        specifier: ^2.0.0
-        version: 2.0.0(typescript@5.4.3)
-      vite:
-        specifier: ^5.2.6
-        version: 5.2.6(@types/node@20.11.30)
-      vitest:
-        specifier: ^1.4.0
-        version: 1.4.0(@types/node@20.11.30)
-
-  packages/basic-login:
-    devDependencies:
-      '@antfu/eslint-config':
-        specifier: ^2.11.0
-        version: 2.11.3(@vue/compiler-sfc@3.4.21)(eslint@8.57.0)(typescript@5.4.3)(vitest@1.4.0)
-      '@antfu/ni':
-        specifier: ^0.21.12
-        version: 0.21.12
-      '@antfu/utils':
-        specifier: ^0.7.7
-        version: 0.7.7
-      '@own-basic-business/base-business':
-        specifier: workspace:*
-        version: link:../basic-base-business
-      '@own-basic-component/config':
-        specifier: 0.8.0
-        version: 0.8.0
-      '@own-basic-component/request':
-        specifier: 0.8.0
-        version: 0.8.0
-      '@own-basic-component/util':
-        specifier: 0.8.0
-        version: 0.8.0
-      '@types/node':
-        specifier: ^20.11.30
-        version: 20.11.30
-      '@vueuse/core':
-        specifier: ^10.9.0
-        version: 10.9.0(vue@3.4.21)
-      bumpp:
-        specifier: ^9.4.0
-        version: 9.4.0
-      eslint:
-        specifier: ^8.57.0
-        version: 8.57.0
-      esno:
-        specifier: ^4.7.0
-        version: 4.7.0
-      lint-staged:
-        specifier: ^15.2.2
-        version: 15.2.2
-      pnpm:
-        specifier: ^8.15.5
-        version: 8.15.5
-      rimraf:
-        specifier: ^5.0.5
-        version: 5.0.5
-      typescript:
-        specifier: ^5.4.3
-        version: 5.4.3
-      unbuild:
-        specifier: ^2.0.0
-        version: 2.0.0(typescript@5.4.3)
-      vite:
-        specifier: ^5.2.6
-        version: 5.2.6(@types/node@20.11.30)
-      vitest:
-        specifier: ^1.4.0
-        version: 1.4.0(@types/node@20.11.30)
-
-  packages/basic-resource:
-    devDependencies:
-      '@antfu/eslint-config':
-        specifier: ^2.11.0
-        version: 2.11.3(@vue/compiler-sfc@3.4.21)(eslint@8.57.0)(typescript@5.4.3)(vitest@1.4.0)
-      '@antfu/ni':
-        specifier: ^0.21.12
-        version: 0.21.12
-      '@antfu/utils':
-        specifier: ^0.7.7
-        version: 0.7.7
-      '@own-basic-business/base-business':
-        specifier: workspace:*
-        version: link:../basic-base-business
-      '@own-basic-component/config':
-        specifier: 0.8.0
-        version: 0.8.0
-      '@own-basic-component/request':
-        specifier: 0.8.0
-        version: 0.8.0
-      '@own-basic-component/util':
-        specifier: 0.8.0
-        version: 0.8.0
       '@types/node':
         specifier: ^20.11.30
         version: 20.11.30
@@ -1279,23 +1093,6 @@ packages:
     transitivePeerDependencies:
       - bluebird
       - supports-color
-    dev: true
-
-  /@own-basic-component/config@0.8.0:
-    resolution: {integrity: sha512-hbw/+RY04xB2QnQYDlBL7qpwL0bvHOUvlHxHeQQhGL1nDJEsQIiPhAShXijyZLAPg23Em1vbK1Dbro/+7ZjDQA==}
-    dev: true
-
-  /@own-basic-component/request@0.8.0:
-    resolution: {integrity: sha512-OFX6tM4ZROjov2I7igxSm+V9/Kl5hQiZ7SkIGWOPpslsddbaiN/0qXjNEXl3afaP6x+8AuZGd1GK6ui9UE2WRw==}
-    engines: {node: '>=16'}
-    dev: true
-
-  /@own-basic-component/util@0.8.0:
-    resolution: {integrity: sha512-oh5TOfHrttlXjRcwqFzApWF5s543gN3l5LZVVeuGfsYJM85siJOm6tghU5rgw5de0bpsszRjHBRGNZEHTGiibA==}
-    engines: {node: '>=16'}
-    dependencies:
-      clipboard: 2.0.11
-      nanoid: 5.0.6
     dev: true
 
   /@pkgjs/parseargs@0.11.0:
@@ -2476,14 +2273,6 @@ packages:
       string-width: 7.1.0
     dev: true
 
-  /clipboard@2.0.11:
-    resolution: {integrity: sha512-C+0bbOqkezLIsmWSvlsXS0Q0bmkugu7jcfMIACB+RDEntIzQIkdr148we28AfSloQLRdZlYL/QYyrq05j/3Faw==}
-    dependencies:
-      good-listener: 1.2.2
-      select: 1.1.2
-      tiny-emitter: 2.1.0
-    dev: true
-
   /cliui@8.0.1:
     resolution: {integrity: sha512-BSeNnyus75C4//NQ9gQt1/csTXyo/8Sb+afLAkzAptFuMsod9HFokGNudZpi/oQV73hnVK+sR+5PVRMd+Dr7YQ==}
     engines: {node: '>=12'}
@@ -2732,10 +2521,6 @@ packages:
 
   /defu@6.1.4:
     resolution: {integrity: sha512-mEQCMmwJu317oSz8CwdIOdwf3xMif1ttiM8LTufzc3g6kR+9Pe236twL8j3IYT1F7GfRgGcW6MWxzZjLIkuHIg==}
-    dev: true
-
-  /delegate@3.2.0:
-    resolution: {integrity: sha512-IofjkYBZaZivn0V8nnsMJGBr4jVLxHDheKSW88PyxS5QC4Vo9ZbZVvhzlSxY87fVq3STR6r+4cGepyHkcWOQSw==}
     dev: true
 
   /destr@2.0.3:
@@ -3661,12 +3446,6 @@ packages:
       slash: 4.0.0
     dev: true
 
-  /good-listener@1.2.2:
-    resolution: {integrity: sha512-goW1b+d9q/HIwbVYZzZ6SsTr4IgE+WA44A0GmPIQstuOrgsFcT7VEJ48nmr9GaRtNu0XTKacFLGnBPAM6Afouw==}
-    dependencies:
-      delegate: 3.2.0
-    dev: true
-
   /graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
     dev: true
@@ -4405,12 +4184,6 @@ packages:
   /nanoid@3.3.7:
     resolution: {integrity: sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
-    hasBin: true
-    dev: true
-
-  /nanoid@5.0.6:
-    resolution: {integrity: sha512-rRq0eMHoGZxlvaFOUdK1Ev83Bd1IgzzR+WJ3IbDJ7QOSdAxYjlurSPqFs9s4lJg29RT6nPwizFtJhQS6V5xgiA==}
-    engines: {node: ^18 || >=20}
     hasBin: true
     dev: true
 
@@ -5388,10 +5161,6 @@ packages:
     resolution: {integrity: sha512-6FtHJEvt+pVMIB9IBY+IcCJ6Z5f1iQnytgyfKMhDKgmzYG+TeH/wx1y3l27rshSbLiSanrR9ffZDrEsmjlQF2g==}
     dev: true
 
-  /select@1.1.2:
-    resolution: {integrity: sha512-OwpTSOfy6xSs1+pwcNrv0RBMOzI39Lp3qQKUTPVVPRjCdNa5JH/oPRiqsesIskK8TVgmRiHwO4KXlV2Li9dANA==}
-    dev: true
-
   /semver@5.7.2:
     resolution: {integrity: sha512-cBznnQ9KjJqU67B52RMC65CMarK2600WFnbkcaiwWq3xy/5haFJlshgnpjovMVJ+Hff49d8GEn0b87C5pDQ10g==}
     hasBin: true
@@ -5712,10 +5481,6 @@ packages:
 
   /text-table@0.2.0:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==}
-    dev: true
-
-  /tiny-emitter@2.1.0:
-    resolution: {integrity: sha512-NB6Dk1A9xgQPMoGqC5CVXn123gWyte215ONT5Pp5a0yt4nlEoO1ZWeCwpncaekPHXO60i47ihFnZPiRPjRMq4Q==}
     dev: true
 
   /tinybench@2.6.0:
