@@ -1,5 +1,10 @@
 import type { BaseCreateVo } from '@own-basic-business/base-business'
 
+/**
+ * 性别 1=男 2=女 0=保密
+ */
+export type GenderType = 0 | 1 | 2
+
 export interface SystemUserInfoVo extends BaseCreateVo {
   /**
    * 用户id
@@ -20,7 +25,7 @@ export interface SystemUserInfoVo extends BaseCreateVo {
   /**
    * 性别 1=男 2=女 0=保密
    */
-  gender: 0 | 1 | 2
+  gender: GenderType
   /**
    * 头像
    */

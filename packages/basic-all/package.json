@@ -1,0 +1,83 @@
+{
+  "name": "@own-basic-business/all",
+  "type": "module",
+  "version": "0.0.8",
+  "packageManager": "pnpm@8.15.5",
+  "description": "_description_",
+  "author": "chenxueli<zjphchenxueli@163.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zjcxl/own-basic-business.git",
+    "directory": "packages/basic-all"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "lint": "eslint .",
+    "prepublishOnly": "nr build",
+    "release": "bumpp && npm publish",
+    "start": "esno src/index.ts",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.11.0",
+    "@antfu/ni": "^0.21.12",
+    "@antfu/utils": "^0.7.7",
+    "@own-basic-business/base-business": "workspace:*",
+    "@own-basic-business/login": "workspace:*",
+    "@own-basic-business/resource": "workspace:*",
+    "@own-basic-component/config": "0.8.0",
+    "@own-basic-component/request": "0.8.0",
+    "@own-basic-component/util": "0.8.0",
+    "@types/node": "^20.11.30",
+    "@vueuse/core": "^10.9.0",
+    "bumpp": "^9.4.0",
+    "eslint": "^8.57.0",
+    "esno": "^4.7.0",
+    "lint-staged": "^15.2.2",
+    "pnpm": "^8.15.5",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.4.3",
+    "unbuild": "^2.0.0",
+    "vite": "^5.2.6",
+    "vitest": "^1.4.0"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}
