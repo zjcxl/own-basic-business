@@ -1,6 +1,6 @@
 import { GetRequestModel, RequestFileModel } from '@own-basic-component/request'
 import type { FileRecordVo, ServiceType, SignatureForm, SignatureModel } from '../entity'
-import { apiBusinessFileRecord } from '.'
+import { apiBusinessFileRecord } from './index'
 
 /**
  * 请求前缀

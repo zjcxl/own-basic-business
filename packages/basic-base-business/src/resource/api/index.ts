@@ -1,5 +1,3 @@
-'use strict'
-
 import apiBusinessFileRecord from './file-record-api'
 import apiBusinessResource from './resource-api'
 

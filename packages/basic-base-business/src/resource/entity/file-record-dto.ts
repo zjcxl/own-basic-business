@@ -1,6 +1,6 @@
-import type { BaseCreateVo } from '@own-basic-business/base-business'
+import type { BaseDto } from '../../base'
 
-export interface FileRecordVo extends BaseCreateVo {
+export interface FileRecordDto extends BaseDto {
 
   /**
    * 文件名称

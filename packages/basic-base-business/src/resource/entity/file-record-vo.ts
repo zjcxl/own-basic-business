@@ -1,34 +1,34 @@
-import type { BaseQuery } from '@own-basic-business/base-business'
+import type { BaseCreateVo } from '../../base'
 
-export interface FileRecordQuery extends BaseQuery {
+export interface FileRecordVo extends BaseCreateVo {
 
   /**
    * 文件名称
    */
-  name?: string
+  name: string
   /**
    * 文件原名称
    */
-  oldName?: string
+  oldName: string
   /**
    * 文件地址（相对路径）
    */
-  path?: string
+  path: string
   /**
    * 文件位置
    */
-  position?: string
+  position: string
   /**
    * 文件类型
    */
-  type?: string
+  type: string
   /**
    * 文件大小（字节）
    */
-  size?: number
+  size: number
   /**
    * 文件的md5值
    */
-  md5?: string
+  md5: string
 
 }

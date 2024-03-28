@@ -1,5 +1,5 @@
 import { DeleteRequestModel, GetRequestModel, PostRequestModel } from '@own-basic-component/request'
-import type { PageModel } from '@own-basic-business/base-business'
+import type { PageModel } from '../../base'
 import type { FileRecordDto, FileRecordQuery, FileRecordVo } from '../entity'
 
 /**

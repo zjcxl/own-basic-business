@@ -1,9 +1,4 @@
-import type { BaseCreateVo } from '@own-basic-business/base-business'
-
-/**
- * 性别 1=男 2=女 0=保密
- */
-export type GenderType = 0 | 1 | 2
+import type { BaseCreateVo, GenderType } from '../../base'
 
 export interface SystemUserInfoVo extends BaseCreateVo {
   /**
