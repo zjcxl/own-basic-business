@@ -8,6 +8,13 @@ import type { SystemMenuMapVo } from '../entity'
 const prefix = 'u/system/menu'
 
 /**
+ * 查询当前用户所有可用的菜单信息
+ */
+function all() {
+  return new GetRequestModel<Array<SystemMenuMapVo>>(`${prefix}/all`).request()
+}
+
+/**
  * 查询当前用户的菜单树信息
  */
 function tree() {
@@ -15,5 +22,6 @@ function tree() {
 }
 
 export default {
+  all,
   tree,
 }
