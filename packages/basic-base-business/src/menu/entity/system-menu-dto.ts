@@ -42,5 +42,13 @@ export interface SystemMenuDto extends BaseDto {
    * 客户端id
    */
   clientId: string
+  /**
+   * 菜单链名称
+   */
+  chainName: string
+  /**
+   * 菜单链ids
+   */
+  chainIds: string
 
 }

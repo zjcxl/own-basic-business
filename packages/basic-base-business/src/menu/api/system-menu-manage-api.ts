@@ -1,7 +1,8 @@
 import { DeleteRequestModel, GetRequestModel, PostRequestModel, PutRequestModel } from '@own-basic-component/request'
 import type { PageResultModel } from '@own-basic-component/config'
-import type { SystemMenuDto, SystemMenuVo } from '../entity'
+import type { SystemMenuDto, SystemMenuMapVo, SystemMenuVo } from '../entity'
 import type { SystemMenuQuery } from '../entity/system-menu-query'
+import type { TreeNode } from '../../base'
 
 /**
  * 请求前缀
@@ -13,6 +14,14 @@ const prefix = 'm/system/menu'
  */
 function page(query: Partial<SystemMenuQuery>) {
   return new PostRequestModel<PageResultModel<SystemMenuVo>>(`${prefix}/page`, query).request()
+}
+
+/**
+ * 查询当前用户的菜单树信息
+ * @param query 查询参数
+ */
+function tree(query: Partial<SystemMenuQuery>) {
+  return new GetRequestModel<Array<TreeNode<SystemMenuMapVo>>>(`${prefix}/tree`, query).request()
 }
 
 /**
@@ -42,6 +51,7 @@ const updateById = (id: string, form: SystemMenuDto) => new PutRequestModel<Syst
 
 export default {
   page,
+  tree,
   add,
   getById,
   updateById,
