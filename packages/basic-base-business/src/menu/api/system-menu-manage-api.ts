@@ -21,7 +21,7 @@ function page(query: Partial<SystemMenuQuery>) {
  * @param query 查询参数
  */
 function tree(query: Partial<SystemMenuQuery>) {
-  return new GetRequestModel<Array<TreeNode<SystemMenuMapVo>>>(`${prefix}/tree`, query).request()
+  return new PostRequestModel<Array<TreeNode<SystemMenuMapVo>>>(`${prefix}/tree`, query).request()
 }
 
 /**
