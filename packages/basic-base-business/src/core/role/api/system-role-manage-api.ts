@@ -5,7 +5,7 @@ import type { SystemRoleDto, SystemRoleQuery, SystemRoleVo } from '../entity'
 /**
  * 请求前缀
  */
-const prefix = 'm/system/menu'
+const prefix = 'm/system/role'
 
 /**
  * 分页查询信息
