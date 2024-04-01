@@ -1,4 +1,6 @@
 export * from './base'
+export * from './log-login'
+export * from './log-operation'
 export * from './login'
 export * from './menu'
 export * from './resource'
