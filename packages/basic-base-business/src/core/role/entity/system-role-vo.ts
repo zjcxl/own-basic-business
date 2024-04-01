@@ -1,5 +1,5 @@
 import type { BaseVo } from '../../../base'
-import type { SystemRolePermissionVo } from './'
+import type { SystemRolePermissionVo } from './system-role-permission-vo'
 
 export interface SystemRoleVo extends BaseVo {
   /**
