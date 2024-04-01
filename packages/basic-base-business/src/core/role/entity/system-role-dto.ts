@@ -1,5 +1,5 @@
 import type { BaseDto } from '../../../base'
-import type { SystemRolePermissionVo } from './system-role-permission-vo'
+import type { SystemRolePermissionDto } from './system-role-permission-dto'
 
 export interface SystemRoleDto extends BaseDto {
   /**
@@ -19,5 +19,5 @@ export interface SystemRoleDto extends BaseDto {
    * key: 菜单id
    * value: 权限值
    */
-  permissions: Array<Omit<SystemRolePermissionVo, 'roleId'>>
+  permissions: Array<Omit<SystemRolePermissionDto, 'roleId'>>
 }
