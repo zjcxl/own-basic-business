@@ -39,10 +39,18 @@ const add = (form: SystemRoleDto) => new PostRequestModel<SystemRoleVo>(`${prefi
  */
 const updateById = (id: string, form: SystemRoleDto) => new PutRequestModel<SystemRoleVo>(`${prefix}/${id}`, form).request()
 
+/**
+ * 修改禁用状态
+ * @param id 主键id
+ * @param isDisable 是否禁用 1=禁用 0=可用
+ */
+const updateDisableById = (id: string, isDisable: 0 | 1) => new PutRequestModel<boolean>(`${prefix}/disable/${id}/${isDisable}`).request()
+
 export default {
   page,
   add,
   getById,
   updateById,
   deleteById,
+  updateDisableById,
 }
