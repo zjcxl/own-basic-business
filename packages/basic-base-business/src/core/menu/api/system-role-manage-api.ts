@@ -1,6 +1,6 @@
 import { DeleteRequestModel, GetRequestModel, PostRequestModel, PutRequestModel } from '@own-basic-component/request'
 import type { PageResultModel, QueryObjectType } from '@own-basic-component/config'
-import type { SystemRoleDto, SystemRoleQuery, SystemRoleVo } from '../entity'
+import type { SystemRoleDto, SystemRoleQuery, SystemRoleVo } from '../../role/entity'
 
 /**
  * 请求前缀
