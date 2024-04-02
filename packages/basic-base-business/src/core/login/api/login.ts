@@ -1,5 +1,5 @@
 import { DeleteRequestModel, GetRequestModel, PostRequestModel } from '@own-basic-component/request'
-import type { SystemUserInfoVo } from '../entity'
+import type { SystemUserInfoVo } from '../../user'
 
 export default {
 

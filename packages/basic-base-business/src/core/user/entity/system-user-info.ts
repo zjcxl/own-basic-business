@@ -1,6 +1,6 @@
-import type { AccountType, BaseQuery, BaseVo, GenderType } from '../../../base'
+import type { AccountType, BaseCreateVo, BaseQuery, GenderType } from '../../../base'
 
-export interface SystemUserInfoVo extends BaseVo {
+export interface SystemUserInfoVo extends BaseCreateVo {
   /**
    * 用户id
    */

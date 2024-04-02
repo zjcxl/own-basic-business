@@ -1,7 +1,5 @@
-import apiBusinessFileRecord from './file-record-api'
-import apiBusinessResource from './resource-api'
+import apiBusinessSystemUserInfoManage from './system-user-info-api'
 
 export {
-  apiBusinessFileRecord,
-  apiBusinessResource,
+  apiBusinessSystemUserInfoManage,
 }

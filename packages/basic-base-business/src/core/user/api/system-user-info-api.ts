@@ -21,6 +21,6 @@ function page(query: Partial<SystemUserInfoQuery> | QueryObjectType) {
 // todo 删除
 // todo 查看详情
 
-export {
+export default {
   page,
 }
