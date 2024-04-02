@@ -1,4 +1,4 @@
-import type { BaseDto } from '../../../base'
+import type { BaseDto, YesNoType } from '../../../base'
 import type { SystemRolePermissionDto } from './system-role-permission-dto'
 
 export interface SystemRoleDto extends BaseDto {
@@ -13,7 +13,7 @@ export interface SystemRoleDto extends BaseDto {
   /**
    * 是否禁用 1=禁用 0=可用
    */
-  isDisable: 0 | 1
+  isDisable: YesNoType
   /**
    * 权限列表
    * key: 菜单id

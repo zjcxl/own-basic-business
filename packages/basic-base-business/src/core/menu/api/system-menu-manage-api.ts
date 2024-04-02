@@ -1,7 +1,7 @@
 import { DeleteRequestModel, GetRequestModel, PostRequestModel, PutRequestModel } from '@own-basic-component/request'
 import type { PageResultModel, QueryObjectType } from '@own-basic-component/config'
 import type { SystemMenuDto, SystemMenuMapVo, SystemMenuQuery, SystemMenuVo } from '../entity'
-import type { TreeNode } from '../../../base'
+import type { TreeNode, YesNoType } from '../../../base'
 
 /**
  * 请求前缀
@@ -53,14 +53,14 @@ const updateById = (id: string, form: SystemMenuDto) => new PutRequestModel<Syst
  * @param id 菜单id
  * @param isDisable 是否禁用 1=禁用 0=可用
  */
-const updateDisableById = (id: string, isDisable: 0 | 1) => new PutRequestModel<boolean>(`${prefix}/disable/${id}/${isDisable}`).request()
+const updateDisableById = (id: string, isDisable: YesNoType) => new PutRequestModel<boolean>(`${prefix}/disable/${id}/${isDisable}`).request()
 
 /**
  * 修改菜单的显示状态
  * @param id 菜单id
  * @param idShow 是否显示 1=显示 0=隐藏
  */
-const updateShowById = (id: string, idShow: 0 | 1) => new PutRequestModel<boolean>(`${prefix}/show/${id}/${idShow}`).request()
+const updateShowById = (id: string, idShow: YesNoType) => new PutRequestModel<boolean>(`${prefix}/show/${id}/${idShow}`).request()
 
 export default {
   page,

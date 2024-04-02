@@ -1,4 +1,4 @@
-import type { BaseQuery } from '../../../base'
+import type { BaseQuery, YesNoType } from '../../../base'
 
 export interface SystemMenuQuery extends BaseQuery {
 
@@ -21,11 +21,11 @@ export interface SystemMenuQuery extends BaseQuery {
   /**
    * 是否禁用 1=禁用 0=可用
    */
-  isDisable: 0 | 1
+  isDisable: YesNoType
   /**
    * 是否显示 1=显示 0=隐藏
    */
-  isShow: 0 | 1
+  isShow: YesNoType
   /**
    * 客户端id
    */

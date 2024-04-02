@@ -1,4 +1,4 @@
-import type { BaseQuery } from '../../../base'
+import type { BaseQuery, YesNoType } from '../../../base'
 
 export interface SystemRoleQuery extends BaseQuery {
   /**
@@ -12,5 +12,5 @@ export interface SystemRoleQuery extends BaseQuery {
   /**
    * 是否禁用 1=禁用 0=可用
    */
-  isDisable: 0 | 1
+  isDisable: YesNoType
 }
