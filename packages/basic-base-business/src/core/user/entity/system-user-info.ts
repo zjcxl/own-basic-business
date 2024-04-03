@@ -66,3 +66,11 @@ export interface SystemUserInfoQuery extends BaseQuery {
    */
   type: AccountType
 }
+
+/**
+ * 高级用户信息
+ */
+export interface AdvancedSystemUserInfoVo {
+  info: SystemUserInfoVo
+  [key: string]: any
+}

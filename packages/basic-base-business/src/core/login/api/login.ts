@@ -1,5 +1,5 @@
 import { DeleteRequestModel, GetRequestModel, PostRequestModel } from '@own-basic-component/request'
-import type { SystemUserInfoVo } from '../../user'
+import type { AdvancedSystemUserInfoVo } from '../../user'
 
 export default {
 
@@ -27,10 +27,7 @@ export default {
   /**
    * 获取当前登录用户的信息
    */
-  info: <T = {
-    info: SystemUserInfoVo
-    [key: string]: any
-  }>() => new GetRequestModel<T>('/login/').request(),
+  info: <T = AdvancedSystemUserInfoVo>() => new GetRequestModel<T>('/login/').request(),
 
   /**
    * 验证是否登录
