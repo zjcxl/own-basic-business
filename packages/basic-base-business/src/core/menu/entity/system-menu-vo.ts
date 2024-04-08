@@ -50,6 +50,10 @@ export interface SystemMenuVo extends BaseVo {
    * 菜单链ids
    */
   chainIds: string
+  /**
+   * 是否需要隐藏
+   */
+  needHidden?: boolean
 
 }
 
@@ -103,5 +107,9 @@ export interface SystemMenuMapVo extends BaseMapVo {
    * 菜单链ids
    */
   chainIds: string
+  /**
+   * 是否需要隐藏
+   */
+  needHidden?: boolean
 
 }
