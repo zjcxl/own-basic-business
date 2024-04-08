@@ -51,15 +51,13 @@
     "test": "vitest",
     "typecheck": "tsc --noEmit"
   },
-  "dependencies": {
-    "@own-basic-component/config": "0.8.0",
-    "@own-basic-component/request": "0.8.0",
-    "@own-basic-component/util": "0.8.0"
-  },
   "devDependencies": {
     "@antfu/eslint-config": "^2.12.2",
     "@antfu/ni": "^0.21.12",
     "@antfu/utils": "^0.7.7",
+    "@own-basic-component/config": "0.8.23",
+    "@own-basic-component/request": "0.8.23",
+    "@own-basic-component/util": "0.8.23",
     "@types/node": "^20.12.5",
     "@vueuse/core": "^10.9.0",
     "bumpp": "^9.4.0",
