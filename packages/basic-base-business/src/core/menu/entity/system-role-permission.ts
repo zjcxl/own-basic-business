@@ -1,6 +1,6 @@
 import type { BaseBeanVo, BaseDto } from '../../../base'
 
-export interface SystemRolePermission extends BaseBeanVo {
+export interface SystemRolePermissionVo extends BaseBeanVo {
   /**
    * 角色id
    */

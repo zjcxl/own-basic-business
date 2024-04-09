@@ -1,6 +1,6 @@
 import { DeleteRequestModel, GetRequestModel, PostRequestModel, PutRequestModel } from '@own-basic-component/request'
 import type { PageResultModel, QueryObjectType } from '@own-basic-component/config'
-import type { SystemRole, SystemRoleQuery, SystemRoleVo } from '../entity'
+import type { SystemRoleDto, SystemRoleQuery, SystemRoleVo } from '../entity'
 import type { YesNoType } from '../../../base'
 
 /**
@@ -29,14 +29,14 @@ const deleteById = (id: string) => new DeleteRequestModel<SystemRoleVo>(`${prefi
  * 新增
  * @param form 表单信息
  */
-const add = (form: SystemRole) => new PostRequestModel<SystemRoleVo>(`${prefix}/`, form).request()
+const add = (form: SystemRoleDto) => new PostRequestModel<SystemRoleVo>(`${prefix}/`, form).request()
 
 /**
  * 修改
  * @param id 主键id
  * @param form 表单信息
  */
-const updateById = (id: string, form: SystemRole) => new PutRequestModel<SystemRoleVo>(`${prefix}/${id}`, form).request()
+const updateById = (id: string, form: SystemRoleDto) => new PutRequestModel<SystemRoleVo>(`${prefix}/${id}`, form).request()
 
 /**
  * 修改禁用状态

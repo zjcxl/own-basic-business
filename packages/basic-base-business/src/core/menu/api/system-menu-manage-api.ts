@@ -1,6 +1,6 @@
 import { DeleteRequestModel, GetRequestModel, PostRequestModel, PutRequestModel } from '@own-basic-component/request'
 import type { PageResultModel, QueryObjectType } from '@own-basic-component/config'
-import type { SystemMenu, SystemMenuMapVo, SystemMenuQuery, SystemMenuVo } from '../entity'
+import type { SystemMenuDto, SystemMenuMapVo, SystemMenuQuery, SystemMenuVo } from '../entity'
 import type { TreeNode, YesNoType } from '../../../base'
 
 /**
@@ -35,14 +35,14 @@ const deleteById = (id: string) => new DeleteRequestModel<SystemMenuVo>(`${prefi
  * 新增
  * @param form 表单信息
  */
-const add = (form: SystemMenu) => new PostRequestModel<SystemMenuVo>(`${prefix}/`, form).request()
+const add = (form: SystemMenuDto) => new PostRequestModel<SystemMenuVo>(`${prefix}/`, form).request()
 
 /**
  * 修改
  * @param id 主键id
  * @param form 表单信息
  */
-const updateById = (id: string, form: SystemMenu) => new PutRequestModel<SystemMenuVo>(`${prefix}/${id}`, form).request()
+const updateById = (id: string, form: SystemMenuDto) => new PutRequestModel<SystemMenuVo>(`${prefix}/${id}`, form).request()
 
 /**
  * 修改菜单的禁用状态

@@ -1,6 +1,6 @@
 import type { BaseCreateVo, BaseDto, BaseQuery } from '../../../base'
 
-export interface FileRecord extends BaseQuery {
+export interface FileRecordQuery extends BaseQuery {
 
   /**
    * 文件名称

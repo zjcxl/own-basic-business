@@ -1,6 +1,6 @@
 import type { BaseCreateVo } from '../../../base'
 
-export interface LogLogin extends BaseCreateVo {
+export interface LogLoginVo extends BaseCreateVo {
   /**
    * 登录账号
    */

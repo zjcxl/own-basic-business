@@ -1,6 +1,6 @@
 import type { BaseCreateVo } from '../../../base'
 
-export interface LogOperation extends BaseCreateVo {
+export interface LogOperationVo extends BaseCreateVo {
   /**
    * 操作编码
    */

@@ -1,6 +1,6 @@
 import type { BaseDto, BaseMapVo, BaseQuery, BaseVo, YesNoType } from '../../../base'
 
-export interface SystemMenu extends BaseDto {
+export interface SystemMenuDto extends BaseDto {
 
   /**
    * 菜单编码
