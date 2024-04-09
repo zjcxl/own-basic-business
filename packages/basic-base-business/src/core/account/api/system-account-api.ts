@@ -1,5 +1,5 @@
 import { PostRequestModel } from '@own-basic-component/request'
-import type { SystemAccountVo } from '../entity/system-account'
+import type { SystemAccountVo } from '../entity'
 
 /**
  * 请求前缀

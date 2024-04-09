@@ -1,7 +1,7 @@
 import {
   PostRequestModel,
 } from '@own-basic-component/request'
-import type { QueryType } from '@own-basic-component/config'
+import type { QueryObjectType } from '@own-basic-component/config'
 import type {
   BuriedAeVo,
   BuriedCustomVo,
@@ -17,9 +17,13 @@ const DEFAULT_QUERY: Record<string, string> = {
   appKey: 'bobaoge',
 }
 
+interface BuriedParams {
+  requestHost: string
+}
+
 export default {
 
-  pagePv: (query: QueryType) => new PostRequestModel<PageModel<BuriedPvVo>>(`${query.requestHost || ''}/search/page/pv`, {
+  pagePv: (query?: QueryObjectType & BuriedParams) => new PostRequestModel<PageModel<BuriedPvVo>>(`${query?.requestHost || ''}/search/page/pv`, {
     ...DEFAULT_QUERY,
     ...query,
     requestHost: '',
@@ -27,7 +31,7 @@ export default {
     baseUrl: BASE_URL,
   }).request(),
 
-  pageSt: (query: QueryType) => new PostRequestModel<PageModel<BuriedStVo>>(`${query.requestHost || ''}/search/page/st`, {
+  pageSt: (query?: QueryObjectType & BuriedParams) => new PostRequestModel<PageModel<BuriedStVo>>(`${query?.requestHost || ''}/search/page/st`, {
     ...DEFAULT_QUERY,
     ...query,
     requestHost: '',
@@ -35,7 +39,7 @@ export default {
     baseUrl: BASE_URL,
   }).request(),
 
-  pageAe: (query: QueryType) => new PostRequestModel<PageModel<BuriedAeVo>>(`${query.requestHost || ''}/search/page/ae`, {
+  pageAe: (query?: QueryObjectType & BuriedParams) => new PostRequestModel<PageModel<BuriedAeVo>>(`${query?.requestHost || ''}/search/page/ae`, {
     ...DEFAULT_QUERY,
     ...query,
     requestHost: '',
@@ -43,7 +47,7 @@ export default {
     baseUrl: BASE_URL,
   }).request(),
 
-  pageOp: (query: QueryType) => new PostRequestModel<PageModel<BuriedOpVo>>(`${query.requestHost || ''}/search/page/op`, {
+  pageOp: (query?: QueryObjectType & BuriedParams) => new PostRequestModel<PageModel<BuriedOpVo>>(`${query?.requestHost || ''}/search/page/op`, {
     ...DEFAULT_QUERY,
     ...query,
     requestHost: '',
@@ -51,7 +55,7 @@ export default {
     baseUrl: BASE_URL,
   }).request(),
 
-  pageCustom: (query: QueryType) => new PostRequestModel<PageModel<BuriedCustomVo>>(`${query.requestHost || ''}/search/page/custom`, {
+  pageCustom: (query?: QueryObjectType & BuriedParams) => new PostRequestModel<PageModel<BuriedCustomVo>>(`${query?.requestHost || ''}/search/page/custom`, {
     ...DEFAULT_QUERY,
     ...query,
     requestHost: '',
