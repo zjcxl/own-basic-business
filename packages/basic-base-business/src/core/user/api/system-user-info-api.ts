@@ -12,7 +12,7 @@ const prefix = 'm/system/user/info'
  * 分页查询
  * @param query 查询条件
  */
-function page(query: Partial<SystemUserInfoQuery> | QueryObjectType) {
+function page(query?: Partial<SystemUserInfoQuery> | QueryObjectType) {
   return new PostRequestModel<PageModel<SystemUserInfoVo>>(`${prefix}/page`, query).request()
 }
 
