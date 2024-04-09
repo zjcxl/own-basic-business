@@ -1,1 +1,1 @@
-export * from './log-operation-vo'
+export * from './log-operation'
