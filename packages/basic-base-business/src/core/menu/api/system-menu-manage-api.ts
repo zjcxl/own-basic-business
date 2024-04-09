@@ -11,17 +11,13 @@ const prefix = 'm/system/menu'
 /**
  * 分页查询信息
  */
-function page(query?: Partial<SystemMenuQuery> | QueryObjectType) {
-  return new PostRequestModel<PageResultModel<SystemMenuVo>>(`${prefix}/page`, query).request()
-}
+const page = (query?: Partial<SystemMenuQuery> | QueryObjectType) => new PostRequestModel<PageResultModel<SystemMenuVo>>(`${prefix}/page`, query).request()
 
 /**
  * 查询当前用户的菜单树信息
  * @param query 查询参数
  */
-function tree(query: Partial<SystemMenuQuery> | QueryObjectType) {
-  return new PostRequestModel<Array<TreeNode<SystemMenuMapVo>>>(`${prefix}/tree`, query).request()
-}
+const tree = (query?: Partial<SystemMenuQuery> | QueryObjectType) => new PostRequestModel<Array<TreeNode<SystemMenuMapVo>>>(`${prefix}/tree`, query).request()
 
 /**
  * 根据id获取信息

@@ -11,9 +11,7 @@ const prefix = 'm/system/role'
 /**
  * 分页查询信息
  */
-function page(query?: Partial<SystemRoleQuery> | QueryObjectType) {
-  return new PostRequestModel<PageResultModel<SystemRoleVo>>(`${prefix}/page`, query).request()
-}
+const page = (query?: Partial<SystemRoleQuery> | QueryObjectType) => new PostRequestModel<PageResultModel<SystemRoleVo>>(`${prefix}/page`, query).request()
 
 /**
  * 根据id获取信息
