@@ -1,6 +1,5 @@
 import type { BaseDto, BaseQuery, BaseVo, YesNoType } from '../../../base'
-import type { SystemRolePermissionDto } from './system-role-permission-dto'
-import type { SystemRolePermission } from './system-role-permission'
+import type { SystemRolePermission, SystemRolePermissionDto } from './'
 
 export interface SystemRole extends BaseDto {
   /**
