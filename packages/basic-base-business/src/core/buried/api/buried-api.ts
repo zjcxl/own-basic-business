@@ -1,7 +1,7 @@
 import {
   PostRequestModel,
 } from '@own-basic-component/request'
-import type { QueryObjectType } from '@own-basic-component/config'
+import type { PageResultModel, QueryObjectType } from '@own-basic-component/config'
 import type {
   BuriedAeVo,
   BuriedCustomVo,
@@ -9,7 +9,6 @@ import type {
   BuriedPvVo,
   BuriedStVo,
 } from '../entity'
-import type { PageModel } from '../../../base'
 
 const BASE_URL = '/buriedapi'
 
@@ -23,7 +22,7 @@ interface BuriedParams {
 
 export default {
 
-  pagePv: (query?: QueryObjectType & BuriedParams) => new PostRequestModel<PageModel<BuriedPvVo>>(`${query?.requestHost || ''}/search/page/pv`, {
+  pagePv: (query?: QueryObjectType & BuriedParams) => new PostRequestModel<PageResultModel<BuriedPvVo>>(`${query?.requestHost || ''}/search/page/pv`, {
     ...DEFAULT_QUERY,
     ...query,
     requestHost: '',
@@ -31,7 +30,7 @@ export default {
     baseUrl: BASE_URL,
   }).request(),
 
-  pageSt: (query?: QueryObjectType & BuriedParams) => new PostRequestModel<PageModel<BuriedStVo>>(`${query?.requestHost || ''}/search/page/st`, {
+  pageSt: (query?: QueryObjectType & BuriedParams) => new PostRequestModel<PageResultModel<BuriedStVo>>(`${query?.requestHost || ''}/search/page/st`, {
     ...DEFAULT_QUERY,
     ...query,
     requestHost: '',
@@ -39,7 +38,7 @@ export default {
     baseUrl: BASE_URL,
   }).request(),
 
-  pageAe: (query?: QueryObjectType & BuriedParams) => new PostRequestModel<PageModel<BuriedAeVo>>(`${query?.requestHost || ''}/search/page/ae`, {
+  pageAe: (query?: QueryObjectType & BuriedParams) => new PostRequestModel<PageResultModel<BuriedAeVo>>(`${query?.requestHost || ''}/search/page/ae`, {
     ...DEFAULT_QUERY,
     ...query,
     requestHost: '',
@@ -47,7 +46,7 @@ export default {
     baseUrl: BASE_URL,
   }).request(),
 
-  pageOp: (query?: QueryObjectType & BuriedParams) => new PostRequestModel<PageModel<BuriedOpVo>>(`${query?.requestHost || ''}/search/page/op`, {
+  pageOp: (query?: QueryObjectType & BuriedParams) => new PostRequestModel<PageResultModel<BuriedOpVo>>(`${query?.requestHost || ''}/search/page/op`, {
     ...DEFAULT_QUERY,
     ...query,
     requestHost: '',
@@ -55,7 +54,7 @@ export default {
     baseUrl: BASE_URL,
   }).request(),
 
-  pageCustom: (query?: QueryObjectType & BuriedParams) => new PostRequestModel<PageModel<BuriedCustomVo>>(`${query?.requestHost || ''}/search/page/custom`, {
+  pageCustom: (query?: QueryObjectType & BuriedParams) => new PostRequestModel<PageResultModel<BuriedCustomVo>>(`${query?.requestHost || ''}/search/page/custom`, {
     ...DEFAULT_QUERY,
     ...query,
     requestHost: '',

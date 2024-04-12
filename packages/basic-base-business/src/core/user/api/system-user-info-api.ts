@@ -1,6 +1,5 @@
 import { PostRequestModel } from '@own-basic-component/request'
-import type { QueryObjectType } from '@own-basic-component/config'
-import type { PageModel } from '../../../base'
+import type { PageResultModel, QueryObjectType } from '@own-basic-component/config'
 import type { SystemUserInfoQuery, SystemUserInfoVo } from '../entity'
 
 /**
@@ -13,7 +12,7 @@ const prefix = 'm/system/user/info'
  * @param query 查询条件
  */
 function page(query?: Partial<SystemUserInfoQuery> | QueryObjectType) {
-  return new PostRequestModel<PageModel<SystemUserInfoVo>>(`${prefix}/page`, query).request()
+  return new PostRequestModel<PageResultModel<SystemUserInfoVo>>(`${prefix}/page`, query).request()
 }
 
 // todo 新增

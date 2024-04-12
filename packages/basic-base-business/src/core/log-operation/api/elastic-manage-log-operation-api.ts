@@ -2,9 +2,8 @@ import {
   GetRequestCacheModel,
   PostRequestModel,
 } from '@own-basic-component/request'
-import type { QueryObjectType } from '@own-basic-component/config'
+import type { PageResultModel, QueryObjectType } from '@own-basic-component/config'
 import type { LogOperationVo } from '../entity'
-import type { PageModel } from '../../../base'
 
 const API_PREFIX = 'm/log/operation'
 
@@ -14,7 +13,7 @@ export default {
    * 分页查询数据信息
    * @param query 查询条件
    */
-  page: (query?: QueryObjectType) => new PostRequestModel<PageModel<LogOperationVo>>(`${API_PREFIX}/page`, query, {
+  page: (query?: QueryObjectType) => new PostRequestModel<PageResultModel<LogOperationVo>>(`${API_PREFIX}/page`, query, {
     preprocess(data) {
       (data.data?.list || []).forEach((item) => {
         if (item.ip)

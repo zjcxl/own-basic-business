@@ -2,8 +2,7 @@ import {
   GetRequestCacheModel,
   PostRequestModel,
 } from '@own-basic-component/request'
-import type { QueryObjectType } from '@own-basic-component/config'
-import type { PageModel } from '../../../base'
+import type { PageResultModel, QueryObjectType } from '@own-basic-component/config'
 import type { LogLoginVo } from '../entity'
 
 const API_PREFIX = 'u/log/login'
@@ -14,7 +13,7 @@ export default {
    * 分页查询数据信息
    * @param query 查询条件
    */
-  page: (query?: QueryObjectType) => new PostRequestModel<PageModel<LogLoginVo>>(`${API_PREFIX}/page`, query, {
+  page: (query?: QueryObjectType) => new PostRequestModel<PageResultModel<LogLoginVo>>(`${API_PREFIX}/page`, query, {
     preprocess(data) {
       (data.data?.list || []).forEach((item) => {
         if (item.ip)

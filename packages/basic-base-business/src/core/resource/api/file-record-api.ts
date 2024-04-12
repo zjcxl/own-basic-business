@@ -1,6 +1,5 @@
 import { DeleteRequestModel, GetRequestModel, PostRequestModel } from '@own-basic-component/request'
-import type { QueryObjectType } from '@own-basic-component/config'
-import type { PageModel } from '../../../base'
+import type { PageResultModel, QueryObjectType } from '@own-basic-component/config'
 import type { FileRecordDto, FileRecordQuery, FileRecordVo } from '../entity'
 
 /**
@@ -14,7 +13,7 @@ export default {
    * 分页查询文件信息
    * @param query 查询条件
    */
-  page: (query?: Partial<FileRecordQuery> | QueryObjectType) => new PostRequestModel<PageModel<FileRecordVo>>(`${prefix}/page`, query).request(),
+  page: (query?: Partial<FileRecordQuery> | QueryObjectType) => new PostRequestModel<PageResultModel<FileRecordVo>>(`${prefix}/page`, query).request(),
   /**
    * 保存文件信息
    * @param form 新增表单

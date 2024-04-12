@@ -10,7 +10,7 @@
     "bumpp": "bumpp patch -r --commit --push --tag -y",
     "publish:release": "pnpm -r publish --no-git-checks --access public",
     "publish:pre": "nr build",
-    "up": "taze major -r -f -w"
+    "up": "taze major -rfwi"
   },
   "publishConfig": {
     "access": "public",
