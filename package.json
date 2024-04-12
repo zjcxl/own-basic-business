@@ -1,5 +1,5 @@
 {
-  "name": "@own-team/base-business",
+  "name": "@own-team/own-basic-business",
   "private": true,
   "packageManager": "pnpm@8.15.6",
   "version": "0.0.50",
