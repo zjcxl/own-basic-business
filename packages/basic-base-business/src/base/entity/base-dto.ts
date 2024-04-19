@@ -7,4 +7,8 @@ export interface BaseDto {
    * 版本号
    */
   version?: number
+  /**
+   * 备注
+   */
+  memo?: string
 }
