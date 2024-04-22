@@ -2,7 +2,7 @@ import {
   GetRequestCacheModel,
   PostRequestModel,
 } from '@own-basic-component/request'
-import type { PageResultModel, QueryObjectType } from '@own-basic-component/config'
+import type { PageResultModel, QueryObjectType, ResultModel } from '@own-basic-component/config'
 import type { LogOperationVo } from '../entity'
 
 const API_PREFIX = 'u/log/operation'
@@ -13,15 +13,19 @@ export default {
    * 分页查询数据信息
    * @param query 查询条件
    */
-  page: (query?: QueryObjectType) => new PostRequestModel<PageResultModel<LogOperationVo>>(`${API_PREFIX}/page`, query, {
-    preprocess(data) {
-      (data.data?.list || []).forEach((item) => {
-        if (item.ip)
-          item.ip = item.ip.split(',')?.[0]?.trim() || ''
-      })
-      return data
-    },
-  }).request(),
+  page: (query?: QueryObjectType): Promise<ResultModel<PageResultModel<LogOperationVo>>> => {
+    return new Promise((resolve) => {
+      new PostRequestModel<PageResultModel<LogOperationVo>>(`${API_PREFIX}/page`, query)
+        .request()
+        .then((data) => {
+          (data.data?.list || []).forEach((item) => {
+            if (item.ip)
+              item.ip = item.ip.split(',')?.[0]?.trim() || ''
+          })
+          resolve(data)
+        })
+    })
+  },
 
   /**
    * 根据操作日志id查询信息
