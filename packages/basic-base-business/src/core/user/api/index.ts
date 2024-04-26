@@ -1,4 +1,4 @@
-import apiBusinessSystemUserInfoManage from './system-user-info-api'
+import apiBusinessSystemUserInfoManage from './system-user-info-manage-api'
 
 export {
   apiBusinessSystemUserInfoManage,
