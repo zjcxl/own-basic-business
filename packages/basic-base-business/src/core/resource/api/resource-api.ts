@@ -100,7 +100,7 @@ const SERVICE_UPLOAD_MAP: Record<ServiceType, (file: File, model: SignatureModel
  */
 async function uploadBySignature(file: File, model: SignatureModel, onUploadProgress?: (event: ProgressEvent) => void) {
   // 直传文件
-  await SERVICE_UPLOAD_MAP[model.type](file, model, onUploadProgress).then(() => {})
+  await SERVICE_UPLOAD_MAP[model.type](file, model, onUploadProgress)
   // 保存文件信息
   return apiBusinessFileRecord.add({
     name: file.name,
