@@ -39,11 +39,12 @@ function getSignatureForBusiness(fileName: string, form: SignatureForm) {
  * @param fileName 文件名称
  * @param file 上传的文件
  * @param method 上传方式 默认default
+ * @param onUploadProgress 上传进度
  */
-async function uploadForSignature(fileName: string, file: File, method: string = 'default') {
+async function uploadForSignature(fileName: string, file: File, method: string = 'default', onUploadProgress?: (event: ProgressEvent) => void) {
   // 获取签名信息
   const { data: model } = await getSignature(fileName, method)
-  return uploadBySignature(file, model)
+  return uploadBySignature(file, model, onUploadProgress)
 }
 
 /**
@@ -51,17 +52,18 @@ async function uploadForSignature(fileName: string, file: File, method: string =
  * @param fileName 文件名称
  * @param file 上传的文件
  * @param form 签名表单
+ * @param onUploadProgress 上传进度
  */
-async function uploadForSignatureForBusiness(fileName: string, file: File, form: SignatureForm) {
+async function uploadForSignatureForBusiness(fileName: string, file: File, form: SignatureForm, onUploadProgress?: (event: ProgressEvent) => void) {
   const { data: model } = await new GetRequestModel<SignatureModel>(`${prefix}/signature?fileName=${fileName}`, form).request()
-  return uploadBySignature(file, model)
+  return uploadBySignature(file, model, onUploadProgress)
 }
 
 /**
  * 上传文件的三方方法
  */
-const SERVICE_UPLOAD_MAP: Record<ServiceType, (file: File, model: SignatureModel) => Promise<void>> = {
-  aliyun: async (file: File, model: SignatureModel) => new Promise(() => {
+const SERVICE_UPLOAD_MAP: Record<ServiceType, (file: File, model: SignatureModel, onUploadProgress?: (event: ProgressEvent) => void) => Promise<void>> = {
+  aliyun: async (file: File, model: SignatureModel, onUploadProgress?: (event: ProgressEvent) => void) => new Promise(() => {
     const formData = new FormData()
     formData.append('key', model.dir)
     formData.append('OSSAccessKeyId', model.accessId)
@@ -78,6 +80,8 @@ const SERVICE_UPLOAD_MAP: Record<ServiceType, (file: File, model: SignatureModel
         return Promise.resolve()
       }
     }
+    if (onUploadProgress)
+      xhr.upload.onprogress = onUploadProgress
   }),
   huawei: () => Promise.resolve(),
   minio: () => Promise.resolve(),
@@ -89,10 +93,11 @@ const SERVICE_UPLOAD_MAP: Record<ServiceType, (file: File, model: SignatureModel
  * 根据签名信息和文件信息上传文件
  * @param file
  * @param model
+ * @param onUploadProgress
  */
-async function uploadBySignature(file: File, model: SignatureModel) {
+async function uploadBySignature(file: File, model: SignatureModel, onUploadProgress?: (event: ProgressEvent) => void) {
   // 直传文件
-  SERVICE_UPLOAD_MAP[model.type](file, model).then(() => {})
+  SERVICE_UPLOAD_MAP[model.type](file, model, onUploadProgress).then(() => {})
   // 保存文件信息
   return apiBusinessFileRecord.add({
     name: file.name,
