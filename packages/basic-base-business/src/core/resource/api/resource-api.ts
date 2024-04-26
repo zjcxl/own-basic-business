@@ -63,26 +63,30 @@ async function uploadForSignatureForBusiness(fileName: string, file: File, form:
  * 上传文件的三方方法
  */
 const SERVICE_UPLOAD_MAP: Record<ServiceType, (file: File, model: SignatureModel, onUploadProgress?: (event: ProgressEvent) => void) => Promise<void>> = {
-  aliyun: async (file: File, model: SignatureModel, onUploadProgress?: (event: ProgressEvent) => void) => new Promise(() => {
+  aliyun: async (file: File, model: SignatureModel, onUploadProgress?: (event: ProgressEvent) => void) => new Promise((resolve, reject) => {
     const formData = new FormData()
-    formData.append('key', model.dir)
-    formData.append('OSSAccessKeyId', model.accessId)
+    formData.append('name', file.name)
     formData.append('policy', model.policy)
-    formData.append('signature', model.signature)
-    formData.append('file', file)
+    formData.append('OSSAccessKeyId', model.accessId)
     formData.append('success_action_status', '200')
+    formData.append('signature', model.signature)
+    formData.append('key', model.dir)
+    formData.append('file', file)
     const xhr = new XMLHttpRequest()
     xhr.open('POST', model.host)
     xhr.onload = () => {
       if (xhr.status === 200) {
         // 上传成功
-        return Promise.resolve()
+        resolve()
       }
     }
     if (onUploadProgress) {
       xhr.upload.onprogress = (e) => {
         onUploadProgress(e)
       }
+    }
+    xhr.onerror = (e) => {
+      reject(e)
     }
     xhr.send(formData)
   }),
@@ -99,10 +103,8 @@ const SERVICE_UPLOAD_MAP: Record<ServiceType, (file: File, model: SignatureModel
  * @param onUploadProgress
  */
 async function uploadBySignature(file: File, model: SignatureModel, onUploadProgress?: (event: ProgressEvent) => void) {
-  console.log('uploadBySignature', file, model, onUploadProgress)
   // 直传文件
   await SERVICE_UPLOAD_MAP[model.type](file, model, onUploadProgress)
-  console.log('uploadBySignature', file, model, onUploadProgress)
   // 保存文件信息
   return apiBusinessFileRecord.add({
     name: file.name,
