@@ -79,8 +79,10 @@ const SERVICE_UPLOAD_MAP: Record<ServiceType, (file: File, model: SignatureModel
         return Promise.resolve()
       }
     }
+    console.log('onUploadProgress', onUploadProgress)
     if (onUploadProgress) {
       xhr.upload.onprogress = (e) => {
+        console.log(e)
         onUploadProgress(e)
       }
     }
