@@ -73,7 +73,6 @@ const SERVICE_UPLOAD_MAP: Record<ServiceType, (file: File, model: SignatureModel
     formData.append('success_action_status', '200')
     const xhr = new XMLHttpRequest()
     xhr.open('POST', model.host)
-    xhr.send(formData)
     xhr.onload = () => {
       if (xhr.status === 200) {
         // 上传成功
@@ -85,6 +84,7 @@ const SERVICE_UPLOAD_MAP: Record<ServiceType, (file: File, model: SignatureModel
         onUploadProgress(e)
       }
     }
+    xhr.send(formData)
   }),
   huawei: () => Promise.resolve(),
   minio: () => Promise.resolve(),
