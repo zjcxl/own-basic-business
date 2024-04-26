@@ -80,8 +80,11 @@ const SERVICE_UPLOAD_MAP: Record<ServiceType, (file: File, model: SignatureModel
         return Promise.resolve()
       }
     }
-    if (onUploadProgress)
-      xhr.upload.onprogress = onUploadProgress
+    if (onUploadProgress) {
+      xhr.upload.onprogress = (e) => {
+        onUploadProgress(e)
+      }
+    }
   }),
   huawei: () => Promise.resolve(),
   minio: () => Promise.resolve(),
