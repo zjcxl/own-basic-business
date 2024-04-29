@@ -27,6 +27,21 @@ export const ORDER_STATUS_MAP: Record<OrderStatus, string> = {
   7: '已退款（部分）',
 }
 
+export interface OrderStatusType {
+  key: OrderStatus
+  text: string
+}
+
+export const ORDER_STATUS_ARRAY: OrderStatusType[] = [
+  { key: 1, text: '待支付' },
+  { key: 2, text: '已支付' },
+  { key: 3, text: '已取消' },
+  { key: 4, text: '已退款' },
+  { key: 5, text: '超时取消' },
+  { key: 6, text: '已退款（全额）' },
+  { key: 7, text: '已退款（部分）' },
+]
+
 export interface BillHistoryVo extends BaseVo {
 
   /**
