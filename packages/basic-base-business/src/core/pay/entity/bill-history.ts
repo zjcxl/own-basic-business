@@ -9,6 +9,24 @@ export type BillTradeType = 'wechat' | 'alipay' | 'balance'
  */
 export type BillPayType = 1 | 2 | 3
 
+/**
+ * 订单状态（1=新建 2=完成 4=订单关闭 5=超时取消 6=已退款（全额） 7=已退款（部分）
+ */
+export type OrderStatus = 1 | 2 | 3 | 4 | 5 | 6 | 7
+
+/**
+ * 订单状态文本
+ */
+export const ORDER_STATUS_MAP: Record<OrderStatus, string> = {
+  1: '待支付',
+  2: '已支付',
+  3: '已取消',
+  4: '已退款',
+  5: '超时取消',
+  6: '已退款（全额）',
+  7: '已退款（部分）',
+}
+
 export interface BillHistoryVo extends BaseVo {
 
   /**
@@ -54,7 +72,7 @@ export interface BillHistoryVo extends BaseVo {
   /**
    * 订单状态（1=新建 2=完成 4=订单关闭 5=超时取消 6=已退款（全额） 7=已退款（部分）
    */
-  status: number
+  status: OrderStatus
   /**
    * 交易时间
    */
