@@ -4,7 +4,7 @@ import {
 } from '@own-basic-component/request'
 import type { PageResultModel, QueryObjectType, ResultModel } from '@own-basic-component/config'
 import type { LogOperationQuery, LogOperationStatsTimeRangeQuery, LogOperationVo } from '../entity'
-import type { ItemCountModel } from '../../../base'
+import type { ItemCountModel, TreeNode } from '../../../base'
 
 const API_PREFIX = 'm/log/operation'
 
@@ -49,7 +49,7 @@ function getByTraceId(traceId: string) {
 function statsForTimeRange(
   query?: Partial<LogOperationStatsTimeRangeQuery> | QueryObjectType,
 ) {
-  return new PostRequestModel<Array<ItemCountModel>>(`${API_PREFIX}/stats/time/range`, query).request()
+  return new PostRequestModel<Array<TreeNode<ItemCountModel>>>(`${API_PREFIX}/stats/time/range`, query).request()
 }
 
 export default {
