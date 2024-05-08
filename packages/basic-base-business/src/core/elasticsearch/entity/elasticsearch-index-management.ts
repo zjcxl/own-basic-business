@@ -28,7 +28,7 @@ export interface ElasticsearchIndexManagementVo {
   /**
    * 存储大小（byte）
    */
-  storageSize: string
+  storageSize: number
 }
 
 export interface ElasticsearchIndexManagementQuery extends BaseQuery {
