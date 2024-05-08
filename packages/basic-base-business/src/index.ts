@@ -1,6 +1,7 @@
 export * from './base'
 export * from './core/account'
 export * from './core/buried'
+export * from './core/elasticsearch'
 export * from './core/log-login'
 export * from './core/log-operation'
 export * from './core/login'
