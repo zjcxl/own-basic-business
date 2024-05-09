@@ -8,3 +8,14 @@ export interface ItemCountModel {
    */
   count: number
 }
+
+export interface ChildrenItemModel<ITEM_TYPE, CHILD_TYPE> {
+  /**
+   * 项目内容
+   */
+  item: ITEM_TYPE
+  /**
+   * 子节点
+   */
+  children: CHILD_TYPE[]
+}
