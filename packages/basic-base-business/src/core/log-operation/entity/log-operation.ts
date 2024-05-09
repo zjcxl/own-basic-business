@@ -162,5 +162,5 @@ export interface LogOperationStatsTimeRangeQuery extends LogOperationQuery {
   /**
    * 时间范围
    */
-  interval: number
+  interval: 'second' | 'minute' | 'hour' | 'day' | 'month' | 'year'
 }
