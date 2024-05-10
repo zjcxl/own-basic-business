@@ -1,5 +1,5 @@
 import { PostRequestModel } from '@own-basic-component/request'
-import type { QueryObjectType } from '@own-basic-component/config'
+import type { QueryObjectType, ResultModel } from '@own-basic-component/config'
 import type { LogOperationStatsTimeRangeQuery } from '../entity'
 import type { ChildrenItemModel, ItemCountModel } from '../../../base'
 
@@ -11,7 +11,7 @@ const API_PREFIX = 'm/log/operation/stats'
  */
 export async function statsForTimeRange(
   query?: Partial<LogOperationStatsTimeRangeQuery> | QueryObjectType,
-) {
+): Promise<ResultModel<Array<ChildrenItemModel<ItemCountModel, ItemCountModel>>>> {
   return new PostRequestModel<Array<ChildrenItemModel<ItemCountModel, ItemCountModel>>>(`${API_PREFIX}/time/range`, query).request()
 }
 
@@ -21,7 +21,7 @@ export async function statsForTimeRange(
  */
 export async function statsForUserTimeRange(
   query?: Partial<LogOperationStatsTimeRangeQuery> | QueryObjectType,
-) {
+): Promise<ResultModel<Array<ChildrenItemModel<ItemCountModel, ItemCountModel>>>> {
   return new PostRequestModel<Array<ChildrenItemModel<ItemCountModel, ItemCountModel>>>(`${API_PREFIX}/user/time/range`, query).request()
 }
 
@@ -31,7 +31,7 @@ export async function statsForUserTimeRange(
  */
 export async function statsForUserCountTimeRange(
   query?: Partial<LogOperationStatsTimeRangeQuery> | QueryObjectType,
-) {
+): Promise<ResultModel<Array<ItemCountModel>>> {
   return new PostRequestModel<Array<ItemCountModel>>(`${API_PREFIX}/user/count/time/range`, query).request()
 }
 
@@ -41,7 +41,7 @@ export async function statsForUserCountTimeRange(
  */
 export async function statsForUserCountTimeRangeOnlyApp(
   query?: Partial<LogOperationStatsTimeRangeQuery> | QueryObjectType,
-) {
+): Promise<ResultModel<Array<ItemCountModel>>> {
   return new PostRequestModel<Array<ItemCountModel>>(`${API_PREFIX}/only/app/user/count/time/range`, query).request()
 }
 
@@ -51,6 +51,6 @@ export async function statsForUserCountTimeRangeOnlyApp(
  */
 export async function statsForDeviceCountTimeRange(
   query?: Partial<LogOperationStatsTimeRangeQuery> | QueryObjectType,
-) {
+): Promise<ResultModel<Array<ChildrenItemModel<ItemCountModel, ItemCountModel>>>> {
   return new PostRequestModel<Array<ChildrenItemModel<ItemCountModel, ItemCountModel>>>(`${API_PREFIX}/device/count/time/range`, query).request()
 }
