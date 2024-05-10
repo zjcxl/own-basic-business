@@ -36,6 +36,16 @@ export async function statsForUserCountTimeRange(
 }
 
 /**
+ * 统计时间范围内的用户id数量（仅app的数据）
+ * @param query
+ */
+export async function statsForUserCountTimeRangeOnlyApp(
+  query?: Partial<LogOperationStatsTimeRangeQuery> | QueryObjectType,
+) {
+  return new PostRequestModel<Array<ItemCountModel>>(`${API_PREFIX}/only/app/user/count/time/range`, query).request()
+}
+
+/**
  * 统计时间范围内的设备数量
  * @param query
  */
