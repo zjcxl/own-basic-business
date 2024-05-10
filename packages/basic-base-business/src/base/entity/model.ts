@@ -19,3 +19,17 @@ export interface ChildrenItemModel<ITEM_TYPE, CHILD_TYPE> {
    */
   children: CHILD_TYPE[]
 }
+
+export interface StatsModel {
+  /**
+   * x轴
+   */
+  x: string[]
+  /**
+   * y轴
+   */
+  y: {
+    name: string
+    data: number[]
+  }[]
+}
