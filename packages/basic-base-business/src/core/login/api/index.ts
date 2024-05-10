@@ -1,4 +1,4 @@
-import apiBusinessLogin from './login'
+import * as apiBusinessLogin from './login'
 
 export {
   apiBusinessLogin,

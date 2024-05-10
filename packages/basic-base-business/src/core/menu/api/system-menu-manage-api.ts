@@ -11,60 +11,65 @@ const prefix = 'm/system/menu'
 /**
  * 分页查询信息
  */
-const page = (query?: Partial<SystemMenuQuery> | QueryObjectType) => new PostRequestModel<PageResultModel<SystemMenuVo>>(`${prefix}/page`, query).request()
+export async function page(query?: Partial<SystemMenuQuery> | QueryObjectType) {
+  return new PostRequestModel<PageResultModel<SystemMenuVo>>(`${prefix}/page`, query).request()
+}
 
 /**
  * 查询当前用户的菜单树信息
  * @param query 查询参数
  */
-const tree = (query?: Partial<SystemMenuQuery> | QueryObjectType) => new PostRequestModel<Array<TreeNode<SystemMenuMapVo>>>(`${prefix}/tree`, query).request()
+export async function tree(query?: Partial<SystemMenuQuery> | QueryObjectType) {
+  return new PostRequestModel<Array<TreeNode<SystemMenuMapVo>>>(`${prefix}/tree`, query).request()
+}
 
 /**
  * 根据id获取信息
  * @param id 主键id
  */
-const getById = (id: string) => new GetRequestModel<SystemMenuVo>(`${prefix}/${id}`).request()
+export async function getById(id: string) {
+  return new GetRequestModel<SystemMenuVo>(`${prefix}/${id}`).request()
+}
 
 /**
  * 根据id删除信息
  * @param id 主键id
  */
-const deleteById = (id: string) => new DeleteRequestModel<SystemMenuVo>(`${prefix}/${id}`).request()
+export async function deleteById(id: string) {
+  return new DeleteRequestModel<SystemMenuVo>(`${prefix}/${id}`).request()
+}
 
 /**
  * 新增
  * @param form 表单信息
  */
-const add = (form: SystemMenuDto) => new PostRequestModel<SystemMenuVo>(`${prefix}/`, form).request()
+export async function add(form: SystemMenuDto) {
+  return new PostRequestModel<SystemMenuVo>(`${prefix}/`, form).request()
+}
 
 /**
  * 修改
  * @param id 主键id
  * @param form 表单信息
  */
-const updateById = (id: string, form: SystemMenuDto) => new PutRequestModel<SystemMenuVo>(`${prefix}/${id}`, form).request()
+export async function updateById(id: string, form: SystemMenuDto) {
+  return new PutRequestModel<SystemMenuVo>(`${prefix}/${id}`, form).request()
+}
 
 /**
  * 修改菜单的禁用状态
  * @param id 菜单id
  * @param isDisable 是否禁用 1=禁用 0=可用
  */
-const updateDisableById = (id: string, isDisable: YesNoType) => new PutRequestModel<boolean>(`${prefix}/disable/${id}/${isDisable}`).request()
+export async function updateDisableById(id: string, isDisable: YesNoType) {
+  return new PutRequestModel<boolean>(`${prefix}/disable/${id}/${isDisable}`).request()
+}
 
 /**
  * 修改菜单的显示状态
  * @param id 菜单id
  * @param idShow 是否显示 1=显示 0=隐藏
  */
-const updateShowById = (id: string, idShow: YesNoType) => new PutRequestModel<boolean>(`${prefix}/show/${id}/${idShow}`).request()
-
-export default {
-  page,
-  tree,
-  add,
-  getById,
-  updateById,
-  deleteById,
-  updateDisableById,
-  updateShowById,
+export async function updateShowById(id: string, idShow: YesNoType) {
+  return new PutRequestModel<boolean>(`${prefix}/show/${id}/${idShow}`).request()
 }

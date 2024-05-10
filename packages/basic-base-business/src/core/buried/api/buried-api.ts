@@ -20,46 +20,52 @@ interface BuriedParams {
   requestHost: string
 }
 
-export default {
-
-  pagePv: (query?: Partial<BuriedParams> | QueryObjectType) => new PostRequestModel<PageResultModel<BuriedPvVo>>(`${query?.requestHost || ''}/search/page/pv`, {
+export async function pagePv(query?: Partial<BuriedParams> | QueryObjectType) {
+  return new PostRequestModel<PageResultModel<BuriedPvVo>>(`${query?.requestHost || ''}/search/page/pv`, {
     ...DEFAULT_QUERY,
     ...query,
     requestHost: '',
   }, {
     baseUrl: BASE_URL,
-  }).request(),
+  }).request()
+}
 
-  pageSt: (query?: Partial<BuriedParams> | QueryObjectType) => new PostRequestModel<PageResultModel<BuriedStVo>>(`${query?.requestHost || ''}/search/page/st`, {
+export async function pageSt(query?: Partial<BuriedParams> | QueryObjectType) {
+  return new PostRequestModel<PageResultModel<BuriedStVo>>(`${query?.requestHost || ''}/search/page/st`, {
     ...DEFAULT_QUERY,
     ...query,
     requestHost: '',
   }, {
     baseUrl: BASE_URL,
-  }).request(),
+  }).request()
+}
 
-  pageAe: (query?: Partial<BuriedParams> | QueryObjectType) => new PostRequestModel<PageResultModel<BuriedAeVo>>(`${query?.requestHost || ''}/search/page/ae`, {
+export async function pageAe(query?: Partial<BuriedParams> | QueryObjectType) {
+  return new PostRequestModel<PageResultModel<BuriedAeVo>>(`${query?.requestHost || ''}/search/page/ae`, {
     ...DEFAULT_QUERY,
     ...query,
     requestHost: '',
   }, {
     baseUrl: BASE_URL,
-  }).request(),
+  }).request()
+}
 
-  pageOp: (query?: Partial<BuriedParams> | QueryObjectType) => new PostRequestModel<PageResultModel<BuriedOpVo>>(`${query?.requestHost || ''}/search/page/op`, {
+export async function pageOp(query?: Partial<BuriedParams> | QueryObjectType) {
+  return new PostRequestModel<PageResultModel<BuriedOpVo>>(`${query?.requestHost || ''}/search/page/op`, {
     ...DEFAULT_QUERY,
     ...query,
     requestHost: '',
   }, {
     baseUrl: BASE_URL,
-  }).request(),
+  }).request()
+}
 
-  pageCustom: (query?: Partial<BuriedParams> | QueryObjectType) => new PostRequestModel<PageResultModel<BuriedCustomVo>>(`${query?.requestHost || ''}/search/page/custom`, {
+export async function pageCustom(query?: Partial<BuriedParams> | QueryObjectType) {
+  return new PostRequestModel<PageResultModel<BuriedCustomVo>>(`${query?.requestHost || ''}/search/page/custom`, {
     ...DEFAULT_QUERY,
     ...query,
     requestHost: '',
   }, {
     baseUrl: BASE_URL,
-  }).request(),
-
+  }).request()
 }

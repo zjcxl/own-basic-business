@@ -1,4 +1,4 @@
-import apiBusinessSystemAccountManage from './system-account-api'
+import * as apiBusinessSystemAccountManage from './system-account-api'
 
 export {
   apiBusinessSystemAccountManage,

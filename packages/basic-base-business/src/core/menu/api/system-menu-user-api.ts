@@ -10,14 +10,13 @@ const prefix = 'u/system/menu'
 /**
  * 查询当前用户所有可用的菜单信息
  */
-const all = () => new GetRequestModel<Array<SystemMenuMapVo>>(`${prefix}/all`).request()
+export async function all() {
+  return new GetRequestModel<Array<SystemMenuMapVo>>(`${prefix}/all`).request()
+}
 
 /**
  * 查询当前用户的菜单树信息
  */
-const tree = () => new GetRequestModel<Array<TreeNode<SystemMenuMapVo>>>(`${prefix}/tree`).request()
-
-export default {
-  all,
-  tree,
+export async function tree() {
+  return new GetRequestModel<Array<TreeNode<SystemMenuMapVo>>>(`${prefix}/tree`).request()
 }

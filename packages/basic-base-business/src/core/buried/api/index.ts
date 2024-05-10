@@ -1,4 +1,4 @@
-import apiBusinessBuried from './buried-api'
+import * as apiBusinessBuried from './buried-api'
 
 export {
   apiBusinessBuried,

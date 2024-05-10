@@ -11,7 +11,7 @@ const prefix = 'm/system/user/info'
  * 分页查询
  * @param query 查询条件
  */
-function page(query?: Partial<SystemUserInfoQuery> | QueryObjectType) {
+export async function page(query?: Partial<SystemUserInfoQuery> | QueryObjectType) {
   return new PostRequestModel<PageResultModel<SystemUserInfoVo>>(`${prefix}/page`, query).request()
 }
 
@@ -20,7 +20,7 @@ function page(query?: Partial<SystemUserInfoQuery> | QueryObjectType) {
  * @param userId
  * @param avatar
  */
-function updateAvatar(userId: string, avatar: string) {
+export async function updateAvatar(userId: string, avatar: string) {
   return new PutRequestModel<boolean>(`${prefix}/update/avatar`, {
     userId,
     avatar,
@@ -31,17 +31,6 @@ function updateAvatar(userId: string, avatar: string) {
  * 根据用户id获取用户详细信息
  * @param userId
  */
-function getByUserId(userId: string) {
+export async function getByUserId(userId: string) {
   return new GetRequestModel<SystemUserInfoVo>(`${prefix}/user/id/${userId}`).request()
-}
-
-// todo 新增
-// todo 修改
-// todo 删除
-// todo 查看详情
-
-export default {
-  page,
-  updateAvatar,
-  getByUserId,
 }

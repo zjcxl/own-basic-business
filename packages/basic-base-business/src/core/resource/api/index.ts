@@ -1,5 +1,5 @@
-import apiBusinessFileRecord from './file-record-api'
-import apiBusinessResource from './resource-api'
+import * as apiBusinessFileRecord from './file-record-api'
+import * as apiBusinessResource from './resource-api'
 
 export {
   apiBusinessFileRecord,

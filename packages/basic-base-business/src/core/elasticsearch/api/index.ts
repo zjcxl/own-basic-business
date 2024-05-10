@@ -1,4 +1,4 @@
-import apiBusinessElasticsearchIndexManagementManage from './manage-elasticsearch-index-management-api'
+import * as apiBusinessElasticsearchIndexManagementManage from './manage-elasticsearch-index-management-api'
 
 export {
   apiBusinessElasticsearchIndexManagementManage,
