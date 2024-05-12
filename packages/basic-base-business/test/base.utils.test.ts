@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest'
-import { resolveForDay, resolveForSecond } from '../src/base/utils'
+import { completionTimeRangeUtil } from '../src/base/utils'
 
 describe('completion-time-range', () => {
   it('resolveForSecond', () => {
-    const array = resolveForSecond(
+    const array = completionTimeRangeUtil.resolveForSecond(
       new Date(2024, 0, 1, 0, 0, 0),
       new Date(2024, 0, 1, 0, 0, 10),
     )
@@ -11,7 +11,7 @@ describe('completion-time-range', () => {
   })
 
   it('resolveForDay', () => {
-    const array = resolveForDay(
+    const array = completionTimeRangeUtil.resolveForDay(
       new Date(2024, 0, 1, 0, 0, 0),
       new Date(2024, 0, 3, 0, 0, 0),
     )
