@@ -1,1 +1,1 @@
-export * from './completion-time-range'
+export * as completionTimeRangeUtil from './completion-time-range'
