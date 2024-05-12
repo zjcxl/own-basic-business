@@ -12,3 +12,8 @@ export type AccountType = 1 | 2
  * 是否类型
  */
 export type YesNoType = 0 | 1
+
+/**
+ * 时间间隔类型
+ */
+export type TypeInterval = 'second' | 'minute' | 'hour' | 'day' | 'month' | 'year'

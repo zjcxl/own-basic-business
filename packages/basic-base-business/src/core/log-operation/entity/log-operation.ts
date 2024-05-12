@@ -1,4 +1,4 @@
-import type { BaseCreateVo, BaseQuery, YesNoType } from '../../../base'
+import type { BaseCreateVo, BaseQuery, TypeInterval, YesNoType } from '../../../base'
 
 export interface LogOperationVo extends BaseCreateVo {
   /**
@@ -162,7 +162,7 @@ export interface LogOperationStatsTimeRangeQuery extends LogOperationQuery {
   /**
    * 时间范围
    */
-  interval: 'second' | 'minute' | 'hour' | 'day' | 'month' | 'year'
+  interval: TypeInterval
   /**
    * 是否只查询app 1=是 0=否
    */
