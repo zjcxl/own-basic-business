@@ -1,6 +1,6 @@
 import { DeleteRequestModel, GetRequestModel, PostRequestModel, PutRequestModel } from '@own-basic-component/request'
 import type { PageResultModel, QueryObjectType } from '@own-basic-component/config'
-import type { SystemMenuDto, SystemMenuMapVo, SystemMenuQuery, SystemMenuVo } from '../entity'
+import type { SystemMenuDto, SystemMenuMapVo, SystemMenuQuery, SystemMenuSortFormItem, SystemMenuVo } from '../entity'
 import type { TreeNode, YesNoType } from '../../../base'
 
 /**
@@ -72,4 +72,12 @@ export async function updateDisableById(id: string, isDisable: YesNoType) {
  */
 export async function updateShowById(id: string, idShow: YesNoType) {
   return new PutRequestModel<boolean>(`${prefix}/show/${id}/${idShow}`).request()
+}
+
+/**
+ * 高级排序
+ * @param itemList
+ */
+export async function sort(itemList: SystemMenuSortFormItem[]) {
+  return new PutRequestModel<boolean>(`${prefix}/advanced/sort`, { itemList }).request()
 }

@@ -199,3 +199,14 @@ export interface SystemMenuMapVo extends BaseMapVo {
   needHidden?: boolean
 
 }
+
+export interface SystemMenuSortFormItem {
+  /**
+   * 菜单id
+   */
+  id: string
+  /**
+   * 排序
+   */
+  sort: number
+}
