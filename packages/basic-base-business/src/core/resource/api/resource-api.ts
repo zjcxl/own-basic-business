@@ -1,5 +1,6 @@
-import { GetRequestModel, RequestFileModel } from '@own-basic-component/request'
-import type { FileRecordVo, ServiceType, SignatureForm, SignatureModel } from '../entity'
+import { PostRequestModel, RequestFileModel } from '@own-basic-component/request'
+import type { ResultModel } from '@own-basic-component/config'
+import type { FileRecordVo, ServiceType, SignatureCommonForm, SignatureForm, SignatureModel } from '../entity'
 import { apiBusinessFileRecord } from './index'
 
 /**
@@ -12,7 +13,10 @@ const prefix = 'resource'
  * @param file 上传的文件
  * @param method 上传方式 默认default
  */
-export async function upload(file: File, method: string = 'default') {
+export async function upload(
+  file: File,
+  method: string = 'default',
+): Promise<ResultModel<FileRecordVo>> {
   return new RequestFileModel<FileRecordVo>(`${prefix}/upload?method=${method}`, file).request()
 }
 
@@ -20,9 +24,14 @@ export async function upload(file: File, method: string = 'default') {
  * 获取上传签名信息
  * @param fileName 文件名称
  * @param method 上传方式 默认default
+ * @param form 签名表单
  */
-export async function getSignature(fileName: string, method: string = 'default') {
-  return new GetRequestModel<SignatureModel>(`${prefix}/signature?method=${method}&fileName=${fileName}`).request()
+export async function getSignature(
+  fileName: string,
+  method: string = 'default',
+  form: SignatureCommonForm = {},
+): Promise<ResultModel<SignatureModel>> {
+  return new PostRequestModel<SignatureModel>(`${prefix}/common/signature?method=${method}&fileName=${fileName}`, form).request()
 }
 
 /**
@@ -30,8 +39,11 @@ export async function getSignature(fileName: string, method: string = 'default')
  * @param fileName 文件名称
  * @param form 签名表单
  */
-export async function getSignatureForBusiness(fileName: string, form: SignatureForm) {
-  return new GetRequestModel<SignatureModel>(`${prefix}/signature?fileName=${fileName}`, form).request()
+export async function getSignatureForBusiness(
+  fileName: string,
+  form: SignatureForm,
+): Promise<ResultModel<SignatureModel>> {
+  return new PostRequestModel<SignatureModel>(`${prefix}/signature?fileName=${fileName}`, form).request()
 }
 
 /**
@@ -41,9 +53,17 @@ export async function getSignatureForBusiness(fileName: string, form: SignatureF
  * @param method 上传方式 默认default
  * @param onUploadProgress 上传进度
  */
-export async function uploadForSignature(fileName: string, file: File, method: string = 'default', onUploadProgress?: (event: ProgressEvent) => void) {
+export async function uploadForSignature(
+  fileName: string,
+  file: File,
+  method: string = 'default',
+  onUploadProgress?: (event: ProgressEvent) => void,
+): Promise<ResultModel<FileRecordVo>> {
   // 获取签名信息
   const { data: model } = await getSignature(fileName, method)
+  // 如果文件id存在
+  if (model.fileId)
+    return apiBusinessFileRecord.get(model.fileId)
   return uploadBySignature(file, model, onUploadProgress)
 }
 
@@ -54,8 +74,16 @@ export async function uploadForSignature(fileName: string, file: File, method: s
  * @param form 签名表单
  * @param onUploadProgress 上传进度
  */
-export async function uploadForSignatureForBusiness(fileName: string, file: File, form: SignatureForm, onUploadProgress?: (event: ProgressEvent) => void) {
-  const { data: model } = await new GetRequestModel<SignatureModel>(`${prefix}/signature?fileName=${fileName}`, form).request()
+export async function uploadForSignatureForBusiness(
+  fileName: string,
+  file: File,
+  form: SignatureForm,
+  onUploadProgress?: (event: ProgressEvent) => void,
+): Promise<ResultModel<FileRecordVo>> {
+  const { data: model } = await getSignatureForBusiness(fileName, form)
+  // 如果文件id存在
+  if (model.fileId)
+    return apiBusinessFileRecord.get(model.fileId)
   return uploadBySignature(file, model, onUploadProgress)
 }
 
@@ -102,7 +130,11 @@ const SERVICE_UPLOAD_MAP: Record<ServiceType, (file: File, model: SignatureModel
  * @param model
  * @param onUploadProgress
  */
-export async function uploadBySignature(file: File, model: SignatureModel, onUploadProgress?: (event: ProgressEvent) => void) {
+export async function uploadBySignature(
+  file: File,
+  model: SignatureModel,
+  onUploadProgress?: (event: ProgressEvent) => void,
+): Promise<ResultModel<FileRecordVo>> {
   // 直传文件
   await SERVICE_UPLOAD_MAP[model.type](file, model, onUploadProgress)
   // 保存文件信息
