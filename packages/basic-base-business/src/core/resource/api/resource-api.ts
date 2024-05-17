@@ -66,7 +66,7 @@ export async function uploadForSignature(
   // 如果文件id存在
   if (model.fileId)
     return apiBusinessFileRecord.get(model.fileId)
-  return uploadBySignature(file, model, onUploadProgress)
+  return uploadBySignature(file, model, form?.md5, onUploadProgress)
 }
 
 /**
@@ -86,7 +86,7 @@ export async function uploadForSignatureForBusiness(
   // 如果文件id存在
   if (model.fileId)
     return apiBusinessFileRecord.get(model.fileId)
-  return uploadBySignature(file, model, onUploadProgress)
+  return uploadBySignature(file, model, form.md5, onUploadProgress)
 }
 
 /**
@@ -130,11 +130,13 @@ const SERVICE_UPLOAD_MAP: Record<ServiceType, (file: File, model: SignatureModel
  * 根据签名信息和文件信息上传文件
  * @param file
  * @param model
+ * @param md5 文件的md5值
  * @param onUploadProgress
  */
 export async function uploadBySignature(
   file: File,
   model: SignatureModel,
+  md5: string = '',
   onUploadProgress?: (event: ProgressEvent) => void,
 ): Promise<ResultModel<FileRecordVo>> {
   // 直传文件
@@ -147,6 +149,6 @@ export async function uploadBySignature(
     position: model.host,
     type: file.type,
     size: file.size,
-    md5: '',
+    md5,
   })
 }
