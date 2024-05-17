@@ -59,7 +59,7 @@ export async function uploadForSignature(
   file: File,
   method: string = 'default',
   onUploadProgress?: (event: ProgressEvent) => void,
-  form: SignatureCommonForm = {},
+  form?: SignatureCommonForm,
 ): Promise<ResultModel<FileRecordVo>> {
   // 获取签名信息
   const { data: model } = await getSignature(fileName, method, form)
