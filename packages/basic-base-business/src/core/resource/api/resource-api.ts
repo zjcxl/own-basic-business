@@ -41,9 +41,9 @@ export async function getSignature(
  */
 export async function getSignatureForBusiness(
   fileName: string,
-  form: SignatureForm,
+  form?: SignatureForm,
 ): Promise<ResultModel<SignatureModel>> {
-  return new PostRequestModel<SignatureModel>(`${prefix}/signature?fileName=${fileName}`, form).request()
+  return new PostRequestModel<SignatureModel>(`${prefix}/signature?fileName=${fileName}`, form || {}).request()
 }
 
 /**
@@ -52,15 +52,17 @@ export async function getSignatureForBusiness(
  * @param file 上传的文件
  * @param method 上传方式 默认default
  * @param onUploadProgress 上传进度
+ * @param form 签名表单
  */
 export async function uploadForSignature(
   fileName: string,
   file: File,
   method: string = 'default',
   onUploadProgress?: (event: ProgressEvent) => void,
+  form: SignatureCommonForm = {},
 ): Promise<ResultModel<FileRecordVo>> {
   // 获取签名信息
-  const { data: model } = await getSignature(fileName, method)
+  const { data: model } = await getSignature(fileName, method, form)
   // 如果文件id存在
   if (model.fileId)
     return apiBusinessFileRecord.get(model.fileId)
