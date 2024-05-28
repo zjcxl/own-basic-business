@@ -21,7 +21,7 @@ export const ORDER_STATUS_MAP: Record<OrderStatus, string> = {
   1: '待支付',
   2: '已支付',
   3: '已取消',
-  4: '已退款',
+  4: '已关闭',
   5: '超时取消',
   6: '已退款（全额）',
   7: '已退款（部分）',
