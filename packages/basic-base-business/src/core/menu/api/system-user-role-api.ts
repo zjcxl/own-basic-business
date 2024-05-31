@@ -5,7 +5,7 @@ import type { SystemRoleVo } from '../entity'
 /**
  * 请求前缀
  */
-const prefix = 'm/system/role/user'
+const prefix = 'm/system/user/role'
 
 /**
  * 绑定角色信息
