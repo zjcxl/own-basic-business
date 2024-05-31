@@ -1,6 +1,6 @@
 import { DeleteRequestModel, GetRequestModel, PostRequestModel, PutRequestModel } from '@own-basic-component/request'
 import type { PageResultModel, QueryObjectType } from '@own-basic-component/config'
-import type { SystemRoleDto, SystemRoleQuery, SystemRoleVo } from '../entity'
+import type { SystemRoleDto, SystemRoleMapVo, SystemRoleQuery, SystemRoleVo } from '../entity'
 import type { YesNoType } from '../../../base'
 
 /**
@@ -13,6 +13,13 @@ const prefix = 'm/system/role'
  */
 export async function page(query?: Partial<SystemRoleQuery> | QueryObjectType) {
   return new PostRequestModel<PageResultModel<SystemRoleVo>>(`${prefix}/page`, query).request()
+}
+
+/**
+ * map查询
+ */
+export async function map(query?: Partial<SystemRoleQuery> | QueryObjectType) {
+  return new PostRequestModel<Array<SystemRoleMapVo>>(`${prefix}/map`, query).request()
 }
 
 /**
