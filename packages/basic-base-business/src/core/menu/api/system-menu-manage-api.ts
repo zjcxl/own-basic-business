@@ -68,10 +68,10 @@ export async function updateDisableById(id: string, isDisable: YesNoType) {
 /**
  * 修改菜单的显示状态
  * @param id 菜单id
- * @param idShow 是否显示 1=显示 0=隐藏
+ * @param show 是否显示 1=显示 0=隐藏
  */
-export async function updateShowById(id: string, idShow: YesNoType) {
-  return new PutRequestModel<boolean>(`${prefix}/show/${id}/${idShow}`).request()
+export async function updateShowById(id: string, show: YesNoType) {
+  return new PutRequestModel<boolean>(`${prefix}/show/${id}/${show}`).request()
 }
 
 /**

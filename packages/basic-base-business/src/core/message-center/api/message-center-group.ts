@@ -6,6 +6,7 @@ import type {
   MessageCenterGroupQuery,
   MessageCenterGroupVo,
 } from '../entity'
+import type { YesNoType } from '../../../base'
 
 /**
  * 请求前缀
@@ -64,4 +65,13 @@ export async function add(form: MessageCenterGroupDto) {
  */
 export async function updateById(id: string, form: MessageCenterGroupDto) {
   return new PutRequestModel<MessageCenterGroupVo>(`${prefix}/${id}`, form).request()
+}
+
+/**
+ * 修改显示状态
+ * @param id 主键id
+ * @param show 是否显示 1=显示 0=隐藏
+ */
+export async function updateShowById(id: string, show: YesNoType) {
+  return new PutRequestModel<boolean>(`${prefix}/show/${id}/${show}`).request()
 }
