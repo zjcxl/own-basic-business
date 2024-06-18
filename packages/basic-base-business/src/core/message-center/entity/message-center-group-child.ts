@@ -17,6 +17,10 @@ export interface MessageCenterGroupChildVo extends BaseVo {
    * 消息key
    */
   messageKey: string
+  /**
+   * 排序
+   */
+  sortOrder: number
 }
 
 export interface MessageCenterGroupChildMapVo extends BaseMapVo {
@@ -36,6 +40,10 @@ export interface MessageCenterGroupChildMapVo extends BaseMapVo {
    * 消息key
    */
   messageKey: string
+  /**
+   * 排序
+   */
+  sortOrder: number
 }
 
 export interface MessageCenterGroupChildQuery extends BaseQuery {
@@ -74,4 +82,8 @@ export interface MessageCenterGroupChildDto extends BaseDto {
    * 消息key
    */
   messageKey: string
+  /**
+   * 排序
+   */
+  sortOrder: number
 }

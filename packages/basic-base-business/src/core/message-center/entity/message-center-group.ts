@@ -52,6 +52,10 @@ export interface MessageCenterGroupMapVo extends BaseMapVo {
    * 是否显示（0=不显示 1=显示）
    */
   isShow: YesNoType
+  /**
+   * 排序
+   */
+  sortOrder: number
 }
 
 export interface MessageCenterGroupQuery extends BaseQuery {
@@ -94,4 +98,8 @@ export interface MessageCenterGroupDto extends BaseDto {
    * 是否显示（0=不显示 1=显示）
    */
   isShow: YesNoType
+  /**
+   * 排序
+   */
+  sortOrder: number
 }
