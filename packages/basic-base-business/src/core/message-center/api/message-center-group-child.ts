@@ -4,6 +4,7 @@ import type {
   MessageCenterGroupChildDto,
   MessageCenterGroupChildMapVo,
   MessageCenterGroupChildQuery,
+  MessageCenterGroupChildSortItem,
   MessageCenterGroupChildVo,
 } from '../entity'
 
@@ -64,4 +65,12 @@ export async function add(form: MessageCenterGroupChildDto) {
  */
 export async function updateById(id: string, form: MessageCenterGroupChildDto) {
   return new PutRequestModel<MessageCenterGroupChildVo>(`${prefix}/${id}`, form).request()
+}
+
+/**
+ * 修改
+ * @param list 排序信息
+ */
+export async function sort(list: MessageCenterGroupChildSortItem[]) {
+  return new PostRequestModel<boolean>(`${prefix}/sort`, { list }).request()
 }

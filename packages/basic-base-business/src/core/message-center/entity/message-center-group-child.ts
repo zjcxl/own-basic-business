@@ -87,3 +87,16 @@ export interface MessageCenterGroupChildDto extends BaseDto {
    */
   sortOrder: number
 }
+
+export interface MessageCenterGroupChildSortItem {
+
+  /**
+   * 分组id
+   */
+  groupId: string
+  /**
+   * 详细id
+   */
+  childIdList: string[]
+
+}
