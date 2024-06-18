@@ -17,7 +17,7 @@ const prefix = 'm/message/center/group'
  * 查询所有信息
  */
 export async function all(query?: Partial<MessageCenterGroupQuery> | QueryObjectType) {
-  return new PostRequestModel<PageResultModel<MessageCenterGroupVo>>(`${prefix}/all`, query).request()
+  return new PostRequestModel<Array<MessageCenterGroupVo>>(`${prefix}/all`, query).request()
 }
 
 /**
@@ -31,7 +31,7 @@ export async function page(query?: Partial<MessageCenterGroupQuery> | QueryObjec
  * 分页查询信息
  */
 export async function map(query?: Partial<MessageCenterGroupQuery> | QueryObjectType) {
-  return new PostRequestModel<PageResultModel<MessageCenterGroupMapVo>>(`${prefix}/map`, query).request()
+  return new PostRequestModel<Array<MessageCenterGroupMapVo>>(`${prefix}/map`, query).request()
 }
 
 /**
