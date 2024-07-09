@@ -1,4 +1,5 @@
 import type { BaseCreateVo, BaseQuery, TypeInterval, YesNoType } from '../../../base'
+import type { OperationHeaderInfo } from '../../../base/utils/operation-header-info'
 
 export interface LogOperationVo extends BaseCreateVo {
   /**
@@ -73,6 +74,10 @@ export interface LogOperationVo extends BaseCreateVo {
    * 请求头信息
    */
   headerParams: string
+  /**
+   * 请求头信息
+   */
+  headerObject: OperationHeaderInfo
   /**
    * cookie信息
    */

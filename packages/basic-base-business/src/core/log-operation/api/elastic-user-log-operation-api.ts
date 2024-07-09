@@ -4,6 +4,7 @@ import {
 } from '@own-basic-component/request'
 import type { PageResultModel, QueryObjectType, ResultModel } from '@own-basic-component/config'
 import type { LogOperationVo } from '../entity'
+import { resolveOperationHeader } from '../../../base/utils/operation-header-info'
 
 const API_PREFIX = 'u/log/operation'
 
@@ -18,6 +19,7 @@ export async function page(query?: QueryObjectType): Promise<ResultModel<PageRes
       (data.data?.list || []).forEach((item) => {
         if (item.ip)
           item.ip = item.ip.split(',')?.[0]?.trim() || ''
+        item.headerObject = resolveOperationHeader(item.headerParams)
       })
       return data
     })
@@ -29,6 +31,12 @@ export async function page(query?: QueryObjectType): Promise<ResultModel<PageRes
  */
 export async function getById(id: string) {
   return new GetRequestCacheModel<LogOperationVo>(`${API_PREFIX}/${id}`).request()
+    .then((data) => {
+      if (data.data.ip)
+        data.data.ip = data.data.ip.split(',')?.[0]?.trim() || ''
+      data.data.headerObject = resolveOperationHeader(data.data.headerParams)
+      return data
+    })
 }
 
 /**
@@ -37,4 +45,10 @@ export async function getById(id: string) {
  */
 export async function getByTraceId(traceId: string) {
   return new GetRequestCacheModel<LogOperationVo>(`${API_PREFIX}/trace/${traceId}`).request()
+    .then((data) => {
+      if (data.data.ip)
+        data.data.ip = data.data.ip.split(',')?.[0]?.trim() || ''
+      data.data.headerObject = resolveOperationHeader(data.data.headerParams)
+      return data
+    })
 }

@@ -1,4 +1,5 @@
 import type { BaseCreateVo } from '../../../base'
+import type { OperationHeaderInfo } from '../../../base/utils/operation-header-info'
 
 export interface LogLoginVo extends BaseCreateVo {
   /**
@@ -50,27 +51,7 @@ export interface LogLoginVo extends BaseCreateVo {
    */
   headerParams: string
   /**
-   * 设备名称
+   * 请求头信息
    */
-  deviceName: string
-  /**
-   * 型号
-   */
-  deviceDetailName: string
-  /**
-   * 系统名称
-   */
-  systemName: string
-  /**
-   * 系统版本
-   */
-  systemVersion: string
-  /**
-   * 设备id
-   */
-  deviceId: string
-  /**
-   * 安装包来源平台
-   */
-  platform: string
+  headerObject: OperationHeaderInfo
 }
