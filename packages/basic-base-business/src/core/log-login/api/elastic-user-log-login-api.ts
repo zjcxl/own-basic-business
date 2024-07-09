@@ -18,10 +18,14 @@ export async function page(query?: QueryObjectType): Promise<ResultModel<PageRes
       (data.data?.list || []).forEach((item) => {
         if (item.ip)
           item.ip = item.ip.split(',')?.[0]?.trim() || ''
-        const data = JSON.parse(item.extra).data as Record<string, string>
-        item.deviceName = data.deviceName || ''
-        item.systemName = data.systemName || ''
-        item.systemVersion = data.systemVersion || ''
+        const extra = JSON.parse(item.extra).data as Record<string, string>
+        item.deviceName = extra.deviceName || ''
+        item.systemName = extra.systemName || ''
+        item.systemVersion = extra.systemVersion || ''
+        item.deviceDetailName = extra.deviceDetailName || ''
+        const header = JSON.parse(item.headerParams).data as Record<string, string>
+        item.deviceId = header.deviceId || ''
+        item.platform = header.platform || ''
       })
       return data
     })

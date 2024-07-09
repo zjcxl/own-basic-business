@@ -54,6 +54,10 @@ export interface LogLoginVo extends BaseCreateVo {
    */
   deviceName: string
   /**
+   * 型号
+   */
+  deviceDetailName: string
+  /**
    * 系统名称
    */
   systemName: string
@@ -61,4 +65,12 @@ export interface LogLoginVo extends BaseCreateVo {
    * 系统版本
    */
   systemVersion: string
+  /**
+   * 设备id
+   */
+  deviceId: string
+  /**
+   * 安装包来源平台
+   */
+  platform: string
 }
