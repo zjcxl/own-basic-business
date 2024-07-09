@@ -24,7 +24,7 @@ export async function page(query?: QueryObjectType): Promise<ResultModel<PageRes
         item.systemVersion = extra.systemVersion || ''
         item.deviceDetailName = extra.deviceDetailName || ''
         const header = JSON.parse(item.headerParams) as Record<string, string>
-        item.deviceId = header.deviceId || ''
+        item.deviceId = header['device-id'] || ''
         item.platform = header.platform || ''
       })
       return data
