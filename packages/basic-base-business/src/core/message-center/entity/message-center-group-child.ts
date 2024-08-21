@@ -18,6 +18,10 @@ export interface MessageCenterGroupChildVo extends BaseVo {
    */
   messageKey: string
   /**
+   * 通知类型 inner=站内消息 app_notice=app通知
+   */
+  noticeType: string
+  /**
    * 排序
    */
   sortOrder: number
@@ -40,6 +44,10 @@ export interface MessageCenterGroupChildMapVo extends BaseMapVo {
    * 消息key
    */
   messageKey: string
+  /**
+   * 通知类型 inner=站内消息 app_notice=app通知
+   */
+  noticeType: string
   /**
    * 排序
    */
@@ -82,6 +90,10 @@ export interface MessageCenterGroupChildDto extends BaseDto {
    * 消息key
    */
   messageKey: string
+  /**
+   * 通知类型 inner=站内消息 app_notice=app通知
+   */
+  noticeType: string
   /**
    * 排序
    */
