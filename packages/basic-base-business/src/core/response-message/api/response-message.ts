@@ -34,7 +34,7 @@ export async function saveByOriginCode(
  * 根据源code获取信息
  * @param originCode 源code
  */
-export async function getById(originCode: string) {
+export async function getByOriginCode(originCode: string) {
   return new GetRequestModel<ResponseMessageConfigAdvancedVo>(`${prefix}/code/${originCode}`).request()
 }
 
