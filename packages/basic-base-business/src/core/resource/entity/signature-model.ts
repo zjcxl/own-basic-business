@@ -1,3 +1,6 @@
+import type { YesNoType } from '../../../base'
+import type { FileRecordVo } from './file-record'
+
 /**
  * 三方服务
  */
@@ -8,6 +11,10 @@ export interface SignatureModel {
    * 文件id
    */
   fileId: string
+  /**
+   * 文件记录
+   */
+  record: FileRecordVo
   /**
    * 访问ID
    */
@@ -36,6 +43,10 @@ export interface SignatureModel {
    * 上传的三方类型
    */
   type: ServiceType
+  /**
+   * 是否存在
+   */
+  isExist: YesNoType
 }
 
 export interface SignatureCommonForm {

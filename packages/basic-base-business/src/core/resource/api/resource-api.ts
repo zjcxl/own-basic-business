@@ -1,6 +1,6 @@
-import { PostRequestModel, RequestFileModel } from '@own-basic-component/request'
 import type { ResultModel } from '@own-basic-component/config'
 import type { FileRecordVo, ServiceType, SignatureCommonForm, SignatureForm, SignatureModel } from '../entity'
+import { PostRequestModel, RequestFileModel } from '@own-basic-component/request'
 import { apiBusinessFileRecord } from './index'
 
 /**
@@ -62,8 +62,15 @@ export async function uploadForSignature(
   form?: SignatureCommonForm,
 ): Promise<ResultModel<FileRecordVo>> {
   // 获取签名信息
-  const { data: model } = await getSignature(fileName, method, form)
-  // 如果文件id存在
+  const { data: model, ...response } = await getSignature(fileName, method, form)
+  // 如果文件记录存在，直接返回
+  if (model.record) {
+    return Promise.resolve({
+      ...response,
+      data: model.record,
+    })
+  }
+  // 如果文件id存在，获取文件后返回
   if (model.fileId)
     return apiBusinessFileRecord.get(model.fileId)
   return uploadBySignature(file, model, form?.md5, onUploadProgress)
@@ -82,8 +89,15 @@ export async function uploadForSignatureForBusiness(
   form: SignatureForm,
   onUploadProgress?: (event: ProgressEvent) => void,
 ): Promise<ResultModel<FileRecordVo>> {
-  const { data: model } = await getSignatureForBusiness(fileName, form)
-  // 如果文件id存在
+  const { data: model, ...response } = await getSignatureForBusiness(fileName, form)
+  // 如果文件记录存在，直接返回
+  if (model.record) {
+    return Promise.resolve({
+      ...response,
+      data: model.record,
+    })
+  }
+  // 如果文件id存在，获取文件后返回
   if (model.fileId)
     return apiBusinessFileRecord.get(model.fileId)
   return uploadBySignature(file, model, form.md5, onUploadProgress)
