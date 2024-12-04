@@ -64,7 +64,7 @@ export async function uploadForSignature(
   // 获取签名信息
   const { data: model, ...response } = await getSignature(fileName, method, form)
   // 如果文件记录存在，直接返回
-  if (model.record) {
+  if (model.record && model.record.id) {
     return Promise.resolve({
       ...response,
       data: model.record,
@@ -91,7 +91,7 @@ export async function uploadForSignatureForBusiness(
 ): Promise<ResultModel<FileRecordVo>> {
   const { data: model, ...response } = await getSignatureForBusiness(fileName, form)
   // 如果文件记录存在，直接返回
-  if (model.record) {
+  if (model.record && model.record.id) {
     return Promise.resolve({
       ...response,
       data: model.record,
