@@ -1,7 +1,7 @@
 {
   "name": "@own-basic/business-base",
   "type": "module",
-  "version": "0.0.354",
+  "version": "0.0.355",
   "packageManager": "pnpm@9.14.2",
   "description": "_description_",
   "author": "chenxueli<zjphchenxueli@163.com>",
