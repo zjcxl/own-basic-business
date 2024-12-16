@@ -155,9 +155,11 @@ export async function uploadBySignature(
 ): Promise<ResultModel<FileRecordVo>> {
   // 直传文件
   await SERVICE_UPLOAD_MAP[model.type](file, model, onUploadProgress)
+  // 获取文件的名称
+  const name = model.dir.split('/').pop() || ''
   // 保存文件信息
   return apiBusinessFileRecord.add({
-    name: file.name,
+    name,
     oldName: file.name,
     path: model.dir,
     position: model.host,
