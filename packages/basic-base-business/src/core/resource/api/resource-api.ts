@@ -107,8 +107,8 @@ export async function uploadForSignatureForBusiness(
 /**
  * 上传文件的三方方法
  */
-const SERVICE_UPLOAD_MAP: Record<ServiceType, (file: File, model: SignatureModel, onUploadProgress?: (event: ProgressEvent) => void) => Promise<void>> = {
-  aliyun: async (file: File, model: SignatureModel, onUploadProgress?: (event: ProgressEvent) => void) => new Promise((resolve, reject) => {
+const SERVICE_UPLOAD_MAP: Record<ServiceType, (file: File, model: SignatureModel, md5: string, onUploadProgress?: (event: ProgressEvent) => void) => Promise<void>> = {
+  aliyun: async (file: File, model: SignatureModel, md5: string, onUploadProgress?: (event: ProgressEvent) => void) => new Promise((resolve, reject) => {
     const formData = new FormData()
     formData.append('name', file.name)
     formData.append('policy', model.policy)
@@ -133,7 +133,7 @@ const SERVICE_UPLOAD_MAP: Record<ServiceType, (file: File, model: SignatureModel
         'x:position': model.host,
         'x:type': file.type,
         'x:size': file.size,
-        'x:md5': model.record.md5,
+        'x:md5': md5,
       }
       formData.append('callback-var', stringToBase64(JSON.stringify(callbackVar)))
     }
@@ -176,7 +176,7 @@ export async function uploadBySignature(
   onUploadProgress?: (event: ProgressEvent) => void,
 ): Promise<ResultModel<FileRecordVo>> {
   // 直传文件
-  await SERVICE_UPLOAD_MAP[model.type](file, model, onUploadProgress)
+  await SERVICE_UPLOAD_MAP[model.type](file, model, md5, onUploadProgress)
   // 获取文件的名称
   const name = model.dir.split('/').pop() || ''
   // 保存文件信息
