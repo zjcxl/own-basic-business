@@ -115,6 +115,14 @@ const SERVICE_UPLOAD_MAP: Record<ServiceType, (file: File, model: SignatureModel
     formData.append('success_action_status', '200')
     formData.append('signature', model.signature)
     formData.append('key', model.dir)
+    if (model.callback) {
+      const callback = {
+        callbackUrl: model.callback.url,
+        callbackBody: model.callback.body,
+        callbackBodyType: model.callback.type,
+      }
+      formData.append('callback', stringToBase64(JSON.stringify(callback)))
+    }
     formData.append('file', file)
     const xhr = new XMLHttpRequest()
     xhr.open('POST', model.host)

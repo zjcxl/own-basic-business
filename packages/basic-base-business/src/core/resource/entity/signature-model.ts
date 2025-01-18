@@ -47,6 +47,25 @@ export interface SignatureModel {
    * 是否存在
    */
   isExist: YesNoType
+  /**
+   * 上传回调
+   */
+  callback?: UploadCallbackModel
+}
+
+export interface UploadCallbackModel {
+  /**
+   * 上传回调地址
+   */
+  url: string
+  /**
+   * 上传回调参数
+   */
+  body: string
+  /**
+   * 上传回调参数类型
+   */
+  type: string
 }
 
 export interface SignatureCommonForm {
