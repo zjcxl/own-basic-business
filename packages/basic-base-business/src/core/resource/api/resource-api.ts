@@ -1,6 +1,7 @@
 import type { ResultModel } from '@own-basic-component/config'
 import type { FileRecordVo, ServiceType, SignatureCommonForm, SignatureForm, SignatureModel } from '../entity'
 import { PostRequestModel, RequestFileModel } from '@own-basic-component/request'
+import { stringToBase64 } from '@own-basic-component/util'
 import { apiBusinessFileRecord } from './index'
 
 /**
