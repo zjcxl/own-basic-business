@@ -181,7 +181,7 @@ export async function uploadBySignature(
 ): Promise<ResultModel<FileRecordVo>> {
   // 直传文件
   const response = await SERVICE_UPLOAD_MAP[model.type](file, model, md5, onUploadProgress)
-  if (!model.uploadCallbackUrl) {
+  if (model.uploadCallbackUrl) {
     return response as unknown as ResultModel<FileRecordVo>
   }
   // 获取文件的名称
