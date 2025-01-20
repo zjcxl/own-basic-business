@@ -127,16 +127,13 @@ const SERVICE_UPLOAD_MAP: Record<ServiceType, (file: File, model: SignatureModel
       // 获取文件的名称
       const name = model.dir.split('/').pop() || ''
       // 添加自定义参数
-      const callbackVar = {
-        name,
-        oldName: file.name,
-        path: model.dir,
-        position: model.host,
-        type: file.type,
-        size: file.size,
-        md5,
-      }
-      formData.append('callback-var', stringToBase64(JSON.stringify(callbackVar)))
+      formData.append('x:name', name)
+      formData.append('x:oldName', file.name)
+      formData.append('x:path', model.dir)
+      formData.append('x:position', model.host)
+      formData.append('x:type', file.type)
+      formData.append('x:size', file.size.toString())
+      formData.append('x:md5', md5)
     }
     formData.append('file', file)
     const xhr = new XMLHttpRequest()
