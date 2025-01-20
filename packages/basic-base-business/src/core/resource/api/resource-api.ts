@@ -128,13 +128,13 @@ const SERVICE_UPLOAD_MAP: Record<ServiceType, (file: File, model: SignatureModel
       const name = model.dir.split('/').pop() || ''
       // 添加自定义参数
       const callbackVar = {
-        'x:name': name,
-        'x:oldName': file.name,
-        'x:path': model.dir,
-        'x:position': model.host,
-        'x:type': file.type,
-        'x:size': file.size,
-        'x:md5': md5,
+        name,
+        oldName: file.name,
+        path: model.dir,
+        position: model.host,
+        type: file.type,
+        size: file.size,
+        md5,
       }
       formData.append('callback-var', stringToBase64(JSON.stringify(callbackVar)))
     }
