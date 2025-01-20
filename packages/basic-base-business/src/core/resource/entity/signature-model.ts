@@ -50,22 +50,7 @@ export interface SignatureModel {
   /**
    * 上传回调
    */
-  callback?: UploadCallbackModel
-}
-
-export interface UploadCallbackModel {
-  /**
-   * 上传回调地址
-   */
-  url: string
-  /**
-   * 上传回调参数
-   */
-  body: string
-  /**
-   * 上传回调参数类型
-   */
-  type: string
+  uploadCallbackUrl?: string
 }
 
 export interface SignatureCommonForm {

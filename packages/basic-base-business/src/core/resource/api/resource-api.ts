@@ -116,12 +116,12 @@ const SERVICE_UPLOAD_MAP: Record<ServiceType, (file: File, model: SignatureModel
     formData.append('success_action_status', '200')
     formData.append('signature', model.signature)
     formData.append('key', model.dir)
-    if (model.callback) {
+    if (model.uploadCallbackUrl) {
       const callback = {
-        callbackUrl: model.callback.url,
+        callbackUrl: model.uploadCallbackUrl,
         // eslint-disable-next-line no-template-curly-in-string
         callbackBody: 'name=${x:name}&old_name=${x:old_name}&path=${x:path}&position=${x:position}&type=${x:type}&size=${x:size}&md5=${x:md5}',
-        callbackBodyType: model.callback.type,
+        callbackBodyType: 'application/x-www-form-urlencoded',
       }
       formData.append('callback', stringToBase64(JSON.stringify(callback)))
       // 获取文件的名称
@@ -141,7 +141,13 @@ const SERVICE_UPLOAD_MAP: Record<ServiceType, (file: File, model: SignatureModel
     xhr.onload = () => {
       if (xhr.status === 200) {
         // 上传成功
-        resolve()
+        const responseText = xhr.responseText
+        if (responseText) {
+          resolve(JSON.parse(responseText))
+        }
+        else {
+          resolve()
+        }
       }
     }
     if (onUploadProgress) {
@@ -174,7 +180,10 @@ export async function uploadBySignature(
   onUploadProgress?: (event: ProgressEvent) => void,
 ): Promise<ResultModel<FileRecordVo>> {
   // 直传文件
-  await SERVICE_UPLOAD_MAP[model.type](file, model, md5, onUploadProgress)
+  const response = await SERVICE_UPLOAD_MAP[model.type](file, model, md5, onUploadProgress)
+  if (!model.uploadCallbackUrl) {
+    return response as unknown as ResultModel<FileRecordVo>
+  }
   // 获取文件的名称
   const name = model.dir.split('/').pop() || ''
   // 保存文件信息
