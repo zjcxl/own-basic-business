@@ -120,7 +120,7 @@ const SERVICE_UPLOAD_MAP: Record<ServiceType, (file: File, model: SignatureModel
       const callback = {
         callbackUrl: model.callback.url,
         // eslint-disable-next-line no-template-curly-in-string
-        callbackBody: 'name=${x:name}&oldName=${x:oldName}&path=${x:path}&position=${x:position}&type=${x:type}&size=${x:size}&md5=${x:md5}',
+        callbackBody: 'name=${x:name}&old_name=${x:old_name}&path=${x:path}&position=${x:position}&type=${x:type}&size=${x:size}&md5=${x:md5}',
         callbackBodyType: model.callback.type,
       }
       formData.append('callback', stringToBase64(JSON.stringify(callback)))
@@ -128,7 +128,7 @@ const SERVICE_UPLOAD_MAP: Record<ServiceType, (file: File, model: SignatureModel
       const name = model.dir.split('/').pop() || ''
       // 添加自定义参数
       formData.append('x:name', name)
-      formData.append('x:oldName', file.name)
+      formData.append('x:old_name', file.name)
       formData.append('x:path', model.dir)
       formData.append('x:position', model.host)
       formData.append('x:type', file.type)
