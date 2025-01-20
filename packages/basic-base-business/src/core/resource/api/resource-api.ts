@@ -119,7 +119,8 @@ const SERVICE_UPLOAD_MAP: Record<ServiceType, (file: File, model: SignatureModel
     if (model.callback) {
       const callback = {
         callbackUrl: model.callback.url,
-        callbackBody: model.callback.body,
+        // eslint-disable-next-line no-template-curly-in-string
+        callbackBody: 'name=${x:name}&oldName=${x:oldName}&path=${x:path}&position=${x:position}&type=${x:type}&size=${x:size}&md5=${x:md5}',
         callbackBodyType: model.callback.type,
       }
       formData.append('callback', stringToBase64(JSON.stringify(callback)))
