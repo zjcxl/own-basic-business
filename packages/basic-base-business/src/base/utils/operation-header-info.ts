@@ -14,7 +14,8 @@ export function resolveOperationHeader(headerParams: string): OperationHeaderInf
       deviceDetailName: header['device-detail-name'] || '',
     }
   }
-  catch (e) {
+  catch (error) {
+    console.error('解析请求头参数失败', error)
     return {}
   }
 }

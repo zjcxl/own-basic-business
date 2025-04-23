@@ -1,5 +1,5 @@
-import { format } from 'date-fns'
 import type { TypeInterval } from '../constant'
+import { format } from 'date-fns'
 
 /**
  * 根据时间统计范围解析时间范围
