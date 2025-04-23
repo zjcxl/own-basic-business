@@ -1,1 +1,1 @@
-export * from './log-operation'
+export * from './log-operation-entity'

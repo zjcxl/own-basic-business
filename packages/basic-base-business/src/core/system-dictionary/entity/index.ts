@@ -1,2 +1,2 @@
-export * from './system-dictionary'
-export * from './system-dictionary-item'
+export * from './system-dictionary-entity'
+export * from './system-dictionary-item-entity'

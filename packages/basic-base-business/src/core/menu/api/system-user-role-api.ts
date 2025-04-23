@@ -1,6 +1,6 @@
-import { GetRequestModel, PostRequestModel } from '@own-basic-component/request'
 import type { PageResultModel } from '@own-basic-component/config'
 import type { SystemRoleVo } from '../entity'
+import { GetRequestModel, PostRequestModel } from '@own-basic-component/request'
 
 /**
  * 请求前缀

@@ -1,6 +1,6 @@
-import { GetRequestModel } from '@own-basic-component/request'
 import type { TreeNode } from '../../../base'
 import type { SystemMenuMapVo } from '../entity'
+import { GetRequestModel } from '@own-basic-component/request'
 
 /**
  * 请求前缀

@@ -1,1 +1,1 @@
-export * from './system-account'
+export * from './system-account-entity'

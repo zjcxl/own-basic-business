@@ -1,5 +1,5 @@
 import type { YesNoType } from '../../../base'
-import type { FileRecordVo } from './file-record'
+import type { FileRecordVo } from './file-record-entity'
 
 /**
  * 三方服务

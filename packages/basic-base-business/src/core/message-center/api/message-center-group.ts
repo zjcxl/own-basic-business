@@ -1,12 +1,12 @@
-import { DeleteRequestModel, GetRequestModel, PostRequestModel, PutRequestModel } from '@own-basic-component/request'
 import type { PageResultModel, QueryObjectType } from '@own-basic-component/config'
+import type { YesNoType } from '../../../base'
 import type {
   MessageCenterGroupDto,
   MessageCenterGroupMapVo,
   MessageCenterGroupQuery,
   MessageCenterGroupVo,
 } from '../entity'
-import type { YesNoType } from '../../../base'
+import { DeleteRequestModel, GetRequestModel, PostRequestModel, PutRequestModel } from '@own-basic-component/request'
 
 /**
  * 请求前缀

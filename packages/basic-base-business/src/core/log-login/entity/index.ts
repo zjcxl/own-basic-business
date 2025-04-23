@@ -1,1 +1,1 @@
-export * from './log-login'
+export * from './log-login-entity'

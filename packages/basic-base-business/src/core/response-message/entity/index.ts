@@ -1,1 +1,1 @@
-export * from './response-message'
+export * from './response-message-entity'

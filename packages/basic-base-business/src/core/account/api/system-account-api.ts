@@ -1,7 +1,7 @@
-import { DeleteRequestModel, PostRequestModel, PutRequestModel } from '@own-basic-component/request'
 import type { PageResultModel, QueryObjectType } from '@own-basic-component/config'
-import type { SystemAccountQuery, SystemAccountVo } from '../entity'
 import type { YesNoType } from '../../../base'
+import type { SystemAccountQuery, SystemAccountVo } from '../entity'
+import { DeleteRequestModel, PostRequestModel, PutRequestModel } from '@own-basic-component/request'
 
 /**
  * 请求前缀

@@ -1,1 +1,1 @@
-export * from './elasticsearch-index-management'
+export * from './elasticsearch-index-management-entity'

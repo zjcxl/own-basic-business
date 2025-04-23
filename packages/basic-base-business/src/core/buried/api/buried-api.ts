@@ -1,6 +1,3 @@
-import {
-  PostRequestModel,
-} from '@own-basic-component/request'
 import type { PageResultModel, QueryObjectType } from '@own-basic-component/config'
 import type {
   BuriedAeVo,
@@ -9,6 +6,9 @@ import type {
   BuriedPvVo,
   BuriedStVo,
 } from '../entity'
+import {
+  PostRequestModel,
+} from '@own-basic-component/request'
 
 const BASE_URL = '/buriedapi'
 

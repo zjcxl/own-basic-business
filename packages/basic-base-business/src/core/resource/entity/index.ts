@@ -1,2 +1,2 @@
-export * from './file-record'
-export * from './signature-model'
+export * from './file-record-entity'
+export * from './signature-model-entity'

@@ -1,1 +1,1 @@
-export * from './buried-vo'
+export * from './buried-entity'

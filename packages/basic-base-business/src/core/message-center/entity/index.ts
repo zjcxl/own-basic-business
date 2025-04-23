@@ -1,3 +1,3 @@
-export * from './message-center-content'
-export * from './message-center-group'
-export * from './message-center-group-child'
+export * from './message-center-content-entity'
+export * from './message-center-group-entity'
+export * from './message-center-group-child-entity'

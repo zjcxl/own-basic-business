@@ -1,3 +1,3 @@
-export * from './system-menu'
-export * from './system-role'
-export * from './system-role-permission'
+export * from './system-menu-entity'
+export * from './system-role-entity'
+export * from './system-role-permission-entity'

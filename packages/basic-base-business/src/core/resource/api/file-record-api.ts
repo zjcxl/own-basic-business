@@ -1,6 +1,6 @@
-import { DeleteRequestModel, GetRequestModel, PostRequestModel } from '@own-basic-component/request'
 import type { PageResultModel, QueryObjectType } from '@own-basic-component/config'
 import type { FileRecordDto, FileRecordQuery, FileRecordVo } from '../entity'
+import { DeleteRequestModel, GetRequestModel, PostRequestModel } from '@own-basic-component/request'
 
 /**
  * 请求前缀

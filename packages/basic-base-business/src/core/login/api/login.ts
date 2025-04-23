@@ -1,5 +1,5 @@
-import { DeleteRequestModel, GetRequestModel, PostRequestModel } from '@own-basic-component/request'
 import type { AdvancedSystemUserInfoVo } from '../../user'
+import { DeleteRequestModel, GetRequestModel, PostRequestModel } from '@own-basic-component/request'
 
 /**
  * 登录接口

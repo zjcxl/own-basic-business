@@ -1,1 +1,1 @@
-export * from './entity/bill-history'
+export * from './entity/bill-history-entity'
