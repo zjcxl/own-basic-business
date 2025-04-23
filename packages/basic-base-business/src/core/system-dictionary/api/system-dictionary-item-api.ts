@@ -1,6 +1,6 @@
 import type { PageResultModel, QueryObjectType } from '@own-basic-component/config'
 import type { YesNoType } from 'packages/basic-base-business/src/base'
-import type { SystemDictionaryItemDto, SystemDictionaryItemQuery, SystemDictionaryItemVo } from '../entity'
+import type { SystemDictionaryItemDto, SystemDictionaryItemQuery, SystemDictionaryItemVo } from '../entity/system-dictionary-item-entity'
 import { DeleteRequestModel, GetRequestModel, PostRequestModel, PutRequestModel } from '@own-basic-component/request'
 
 /**

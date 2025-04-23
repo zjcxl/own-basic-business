@@ -1,6 +1,6 @@
 import type { PageResultModel, QueryObjectType } from '@own-basic-component/config'
 import type { YesNoType } from '../../../base'
-import type { SystemRoleDto, SystemRoleMapVo, SystemRoleQuery, SystemRoleVo } from '../entity'
+import type { SystemRoleDto, SystemRoleMapVo, SystemRoleQuery, SystemRoleVo } from '../entity/system-role-entity'
 import { DeleteRequestModel, GetRequestModel, PostRequestModel, PutRequestModel } from '@own-basic-component/request'
 
 /**

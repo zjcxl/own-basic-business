@@ -1,5 +1,5 @@
 import type { PageResultModel, QueryObjectType, ResultModel } from '@own-basic-component/config'
-import type { LogLoginVo } from '../entity'
+import type { LogLoginVo } from '../entity/log-login-entity'
 import {
   GetRequestCacheModel,
   PostRequestModel,

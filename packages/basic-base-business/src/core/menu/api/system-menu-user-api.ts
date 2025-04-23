@@ -1,5 +1,5 @@
 import type { TreeNode } from '../../../base'
-import type { SystemMenuMapVo } from '../entity'
+import type { SystemMenuMapVo } from '../entity/system-menu-entity'
 import { GetRequestModel } from '@own-basic-component/request'
 
 /**

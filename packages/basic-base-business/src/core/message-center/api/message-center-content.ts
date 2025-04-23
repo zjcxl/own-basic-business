@@ -1,5 +1,5 @@
 import type { PageResultModel, QueryObjectType } from '@own-basic-component/config'
-import type { MessageCenterContentDto, MessageCenterContentQuery, MessageCenterContentVo } from '../entity'
+import type { MessageCenterContentDto, MessageCenterContentQuery, MessageCenterContentVo } from '../entity/message-center-content-entity'
 import { DeleteRequestModel, GetRequestModel, PostRequestModel, PutRequestModel } from '@own-basic-component/request'
 
 /**

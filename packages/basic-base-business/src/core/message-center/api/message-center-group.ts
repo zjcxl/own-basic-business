@@ -5,7 +5,7 @@ import type {
   MessageCenterGroupMapVo,
   MessageCenterGroupQuery,
   MessageCenterGroupVo,
-} from '../entity'
+} from '../entity/message-center-group-entity'
 import { DeleteRequestModel, GetRequestModel, PostRequestModel, PutRequestModel } from '@own-basic-component/request'
 
 /**

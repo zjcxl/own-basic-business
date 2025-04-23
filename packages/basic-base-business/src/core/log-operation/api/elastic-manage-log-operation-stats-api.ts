@@ -1,6 +1,6 @@
 import type { QueryObjectType, ResultModel } from '@own-basic-component/config'
 import type { ChildrenItemModel, ItemCountModel } from '../../../base'
-import type { LogOperationStatsTimeRangeQuery } from '../entity'
+import type { LogOperationStatsTimeRangeQuery } from '../entity/log-operation-entity'
 import { PostRequestModel } from '@own-basic-component/request'
 
 const API_PREFIX = 'm/log/operation/stats'

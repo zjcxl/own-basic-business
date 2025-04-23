@@ -157,3 +157,7 @@ export interface BuriedStVo extends BuriedVo {
    */
   toPageName: string
 }
+
+export interface BuriedParams {
+  requestHost: string
+}

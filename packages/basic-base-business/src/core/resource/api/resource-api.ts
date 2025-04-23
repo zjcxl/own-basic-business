@@ -1,8 +1,9 @@
 import type { ResultModel } from '@own-basic-component/config'
-import type { FileRecordVo, ServiceType, SignatureCommonForm, SignatureForm, SignatureModel } from '../entity'
+import type { FileRecordVo } from '../entity/file-record-entity'
+import type { ServiceType, SignatureCommonForm, SignatureForm, SignatureModel } from '../entity/signature-model-entity'
 import { PostRequestModel, RequestFileModel } from '@own-basic-component/request'
 import { stringToBase64 } from '@own-basic-component/util'
-import { apiBusinessFileRecord } from './index'
+import { apiBusinessFileRecord } from '..'
 
 /**
  * 请求前缀

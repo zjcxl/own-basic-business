@@ -5,7 +5,7 @@ import type {
   MessageCenterGroupChildQuery,
   MessageCenterGroupChildSortItem,
   MessageCenterGroupChildVo,
-} from '../entity'
+} from '../entity/message-center-group-child-entity'
 import { DeleteRequestModel, GetRequestModel, PostRequestModel, PutRequestModel } from '@own-basic-component/request'
 
 /**

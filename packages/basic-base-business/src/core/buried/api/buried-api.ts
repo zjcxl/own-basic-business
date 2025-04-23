@@ -3,9 +3,10 @@ import type {
   BuriedAeVo,
   BuriedCustomVo,
   BuriedOpVo,
+  BuriedParams,
   BuriedPvVo,
   BuriedStVo,
-} from '../'
+} from '../entity/buried-entity'
 import {
   PostRequestModel,
 } from '@own-basic-component/request'
@@ -14,10 +15,6 @@ const BASE_URL = '/buriedapi'
 
 const DEFAULT_QUERY: Record<string, string> = {
   appKey: 'bobaoge',
-}
-
-interface BuriedParams {
-  requestHost: string
 }
 
 export async function pagePv(query?: Partial<BuriedParams> | QueryObjectType) {

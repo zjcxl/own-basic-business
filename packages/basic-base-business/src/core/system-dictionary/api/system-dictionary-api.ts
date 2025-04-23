@@ -1,5 +1,5 @@
 import type { PageResultModel, QueryObjectType } from '@own-basic-component/config'
-import type { SystemDictionaryDto, SystemDictionaryQuery, SystemDictionaryVo } from '../entity'
+import type { SystemDictionaryDto, SystemDictionaryQuery, SystemDictionaryVo } from '../entity/system-dictionary-entity'
 import { DeleteRequestModel, GetRequestModel, PostRequestModel, PutRequestModel } from '@own-basic-component/request'
 
 /**

@@ -1,5 +1,5 @@
 import type { PageResultModel, QueryObjectType } from '@own-basic-component/config'
-import type { FileRecordDto, FileRecordQuery, FileRecordVo } from '../entity'
+import type { FileRecordDto, FileRecordQuery, FileRecordVo } from '../entity/file-record-entity'
 import { DeleteRequestModel, GetRequestModel, PostRequestModel } from '@own-basic-component/request'
 
 /**

@@ -1,5 +1,5 @@
 import type { PageResultModel, QueryObjectType, ResultModel } from '@own-basic-component/config'
-import type { ElasticsearchIndexManagementQuery, ElasticsearchIndexManagementVo } from '../entity'
+import type { ElasticsearchIndexManagementQuery, ElasticsearchIndexManagementVo } from '../entity/elasticsearch-index-management-entity'
 import {
   DeleteRequestModel,
   PostRequestModel,

@@ -1,5 +1,5 @@
 import type { PageResultModel, QueryObjectType } from '@own-basic-component/config'
-import type { ResponseMessageConfigAdvancedVo, ResponseMessageConfigForm, ResponseMessageConfigQuery } from '../entity'
+import type { ResponseMessageConfigAdvancedVo, ResponseMessageConfigForm, ResponseMessageConfigQuery } from '../entity/response-message-entity'
 import { DeleteRequestModel, GetRequestModel, PostRequestModel } from '@own-basic-component/request'
 
 const prefix = 'm/response/message/config'

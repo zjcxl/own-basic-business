@@ -1,6 +1,6 @@
 import type { PageResultModel, QueryObjectType } from '@own-basic-component/config'
 import type { TreeNode, YesNoType } from '../../../base'
-import type { SystemMenuDto, SystemMenuMapVo, SystemMenuQuery, SystemMenuSortFormItem, SystemMenuVo } from '../entity'
+import type { SystemMenuDto, SystemMenuMapVo, SystemMenuQuery, SystemMenuSortFormItem, SystemMenuVo } from '../entity/system-menu-entity'
 import { DeleteRequestModel, GetRequestModel, PostRequestModel, PutRequestModel } from '@own-basic-component/request'
 
 /**
@@ -9,7 +9,6 @@ import { DeleteRequestModel, GetRequestModel, PostRequestModel, PutRequestModel 
 const prefix = 'm/system/menu'
 
 /**
- * 分页查询信息
  */
 export async function page(query?: Partial<SystemMenuQuery> | QueryObjectType) {
   return new PostRequestModel<PageResultModel<SystemMenuVo>>(`${prefix}/page`, query).request()

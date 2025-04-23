@@ -1,6 +1,6 @@
 import type { PageResultModel, QueryObjectType } from '@own-basic-component/config'
 import type { YesNoType } from '../../../base'
-import type { SystemAccountQuery, SystemAccountVo } from '../entity'
+import type { SystemAccountQuery, SystemAccountVo } from '../entity/system-account-entity'
 import { DeleteRequestModel, PostRequestModel, PutRequestModel } from '@own-basic-component/request'
 
 /**
