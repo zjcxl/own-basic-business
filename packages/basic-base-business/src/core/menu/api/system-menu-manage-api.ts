@@ -1,7 +1,7 @@
-import { DeleteRequestModel, GetRequestModel, PostRequestModel, PutRequestModel } from '@own-basic-component/request'
 import type { PageResultModel, QueryObjectType } from '@own-basic-component/config'
-import type { SystemMenuDto, SystemMenuMapVo, SystemMenuQuery, SystemMenuSortFormItem, SystemMenuVo } from '../entity'
 import type { TreeNode, YesNoType } from '../../../base'
+import type { SystemMenuDto, SystemMenuMapVo, SystemMenuQuery, SystemMenuSortFormItem, SystemMenuVo } from '../entity'
+import { DeleteRequestModel, GetRequestModel, PostRequestModel, PutRequestModel } from '@own-basic-component/request'
 
 /**
  * 请求前缀
