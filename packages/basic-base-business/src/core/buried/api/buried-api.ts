@@ -5,7 +5,7 @@ import type {
   BuriedOpVo,
   BuriedPvVo,
   BuriedStVo,
-} from '../entity'
+} from '../'
 import {
   PostRequestModel,
 } from '@own-basic-component/request'

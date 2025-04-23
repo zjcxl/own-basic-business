@@ -1,5 +1,5 @@
 import type { PageResultModel } from '@own-basic-component/config'
-import type { SystemRoleVo } from '../entity'
+import type { SystemRoleVo } from '..'
 import { GetRequestModel, PostRequestModel } from '@own-basic-component/request'
 
 /**
