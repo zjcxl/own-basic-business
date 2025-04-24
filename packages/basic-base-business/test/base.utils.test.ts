@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { completionTimeRangeUtil } from '../src/base/utils'
+import { completionTimeRangeUtil } from '../src/base'
 
 describe('completion-time-range', () => {
   it('resolveForSecond', () => {

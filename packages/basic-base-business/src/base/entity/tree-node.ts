@@ -7,6 +7,6 @@ export interface TreeNode<T> {
   /**
    * 子节点
    */
-  children: Array<TreeNode<T>>
+  children: TreeNode<T>[]
 
 }
